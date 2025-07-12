@@ -1,12 +1,55 @@
 "use client"
 
-import { Mail, Phone, Hand, MessageCircle } from "lucide-react"
+import { Mail, Phone, Hand, MessageCircle, ChevronUp } from "lucide-react"
 import { FaWhatsapp } from "react-icons/fa";
 
 import { Button } from "@/components/ui/button"
 import { MotionDiv, MotionSection, fadeInLeft, fadeInUp, fadeInRight, fadeIn, staggerContainer } from "@/components/motion-wrapper"
+import { useCallback, useState, useEffect } from "react";
 
 export default function Footer() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  // Handle scroll to top
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
+  // Show/hide scroll to top button based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setShowScrollTop(scrollTop > 300); // Show after scrolling 300px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Scroll to a section by id
+  const scrollToSection = useCallback((id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      window.scrollTo({
+        top: el.offsetTop - 40, // adjust for header if needed
+        behavior: "smooth",
+      });
+    }
+  }, []);
+
+  // Service links handler
+  const handleServiceClick = useCallback(() => {
+    scrollToSection("services");
+  }, [scrollToSection]);
+
+  // Payment links handler
+  const handlePaymentClick = useCallback(() => {
+    scrollToSection("coming-soon-phone");
+  }, [scrollToSection]);
+
   return (
     <>
       {/* Footer */}
@@ -45,21 +88,21 @@ export default function Footer() {
             <MotionDiv variants={fadeInUp} className="space-y-6">
               <h3 className="text-2xl font-bold mb-4">Servizi Milano</h3>
               <ul className="space-y-4">
-                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Elettricista Milano</li>
-                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Idraulico Milano</li>
-                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Muratore Milano</li>
-                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Riparazioni Casa</li>
-                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Manutenzione</li>
+                <li onClick={handleServiceClick} className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Elettricista Milano</li>
+                <li onClick={handleServiceClick} className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Idraulico Milano</li>
+                <li onClick={handleServiceClick} className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Muratore Milano</li>
+                <li onClick={handleServiceClick} className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Riparazioni Casa</li>
+                <li onClick={handleServiceClick} className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Manutenzione</li>
               </ul>
             </MotionDiv>
             
             <MotionDiv variants={fadeInUp} className="space-y-6">
               <h3 className="text-2xl font-bold mb-4">Pagamenti</h3>
               <ul className="space-y-4">
-                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Bitcoin</li>
-                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Ethereum</li>
-                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Sistema Credito</li>
-                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Pagamenti Sicuri</li>
+                <li onClick={handlePaymentClick} className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Bitcoin</li>
+                <li onClick={handlePaymentClick} className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Ethereum</li>
+                <li onClick={handlePaymentClick} className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Sistema Credito</li>
+                <li onClick={handlePaymentClick} className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Pagamenti Sicuri</li>
               </ul>
             </MotionDiv>
             
@@ -103,6 +146,28 @@ export default function Footer() {
             
             <FaWhatsapp className="w-12 h-12" />
           </a>
+        </Button>
+      </MotionDiv>
+
+      {/* Scroll to Top Button */}
+      <MotionDiv
+        className="fixed bottom-24 right-6 z-50"
+        initial={{ scale: 0, rotate: 180 }}
+        animate={{ 
+          scale: showScrollTop ? 1 : 0, 
+          rotate: showScrollTop ? 0 : 180 
+        }}
+        transition={{ duration: 0.5, type: "spring", bounce: 0.6 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <Button 
+          size="lg" 
+          className="rounded-full w-16 h-16 bg-[#bb6a48] hover:bg-[#e0710d] shadow-lg" 
+          onClick={scrollToTop}
+          aria-label="Torna in cima"
+        >
+          <ChevronUp className="w-12 h-12" />
         </Button>
       </MotionDiv>
     </>
