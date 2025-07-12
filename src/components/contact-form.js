@@ -101,13 +101,13 @@ export default function ContactForm({ initialService = "" }) {
           services.find(s => s.toLowerCase().replace(/\s+/g, "-") === formData.service) || formData.service : 
           "Nessun servizio selezionato"
           
-        const message = `
-Nome: ${formData.firstName} ${formData.lastName}
-Email: ${formData.email}
-Telefono: ${formData.phone}
-Servizio: ${serviceText}
-Messaggio: ${formData.message}
-        `.trim()
+            const message = `
+    Nome: ${formData.firstName} ${formData.lastName}
+    Email: ${formData.email}
+    Telefono: ${formData.phone}
+    Servizio: ${serviceText}
+    Messaggio: ${formData.message}
+            `.trim()
         
         // Encode the message for a URL
         const encodedMessage = encodeURIComponent(message)
