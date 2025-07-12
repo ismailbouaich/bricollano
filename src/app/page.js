@@ -6,10 +6,12 @@ import { Bitcoin, CreditCard, Shield, Zap, Menu, Hand, MessageCircle } from "luc
 import Link from "next/link"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import ContactForm from "@/components/contact-form"
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import EmblaServicesSlider from "@/components/embla-services-slider"
 import ComingSoonPhoneSection from "@/components/coming-soon-phone-section"
 import Footer from "@/components/footer"
+import PageSEO from "@/components/page-seo"
+import MetaTags from "@/components/meta-tags"
 import {
   MotionDiv,
   MotionSection,
@@ -52,6 +54,12 @@ export default function LandingPage() {
 
   const [selectedService, setSelectedService] = useState("");
   const contactFormRef = useRef(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Hydration fix: Only enable client-side features after component is mounted
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleBookService = (service) => {
     // Convert service name to the format expected by the dropdown (lowercase with hyphens)
@@ -67,6 +75,10 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-[#e2dacd] overflow-x-hidden">
+      {/* Add SEO enhancements */}
+      <PageSEO />
+      <MetaTags />
+      
       {/* Header */}
       <MotionDiv
         initial={{ opacity: 0, y: -50 }}
@@ -83,7 +95,7 @@ export default function LandingPage() {
               className="flex items-center space-x-2"
             >
               <Hand className="w-8 h-8 text-[#e0710d]" />
-              <span className="text-2xl font-bold text-[#292927]">Cappomano</span>
+              <span className="text-2xl font-bold text-[#292927] font-playfair brand-name">Cappomano</span>
             </MotionDiv>
 
             {/* Desktop Navigation */}
@@ -91,7 +103,7 @@ export default function LandingPage() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="hidden md:flex items-center space-x-8"
+              className="hidden md:flex items-center space-x-8 font-outfit"
             >
               <Link href="#services" className="text-[#292927]/70 hover:text-[#292927] transition-colors">
                 Servizi
@@ -120,7 +132,7 @@ export default function LandingPage() {
                 <SheetHeader>
                   <SheetTitle className="flex items-center space-x-2">
                     <Hand className="w-6 h-6 text-[#e0710d]" />
-                    <span>Cappomano</span>
+                    <span className="font-playfair">Cappomano</span>
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col space-y-4 mt-8">
@@ -191,8 +203,92 @@ export default function LandingPage() {
       </MotionDiv>
 
       {/* Hero Section */}
-      <MotionSection initial="hidden" animate="visible" variants={staggerContainer} className="py-14 px-4">
-        <div className="container mx-auto max-w-7xl">
+      <MotionSection 
+        initial="hidden" 
+        animate="visible" 
+        variants={staggerContainer} 
+        className="py-14 px-4 relative overflow-hidden"
+      >
+        {/* Animated Background */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-[#e2dacd]"></div>
+          
+          {/* Animated Elements - Client-side only to prevent hydration mismatch */}
+          {isMounted && (
+            <MotionDiv
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.7 }}
+              transition={{ duration: 2 }}
+              className="absolute inset-0"
+            >
+              {/* Floating particles - Use pre-defined values instead of random to avoid hydration issues */}
+              {[
+                { size: 25, top: '10%', left: '20%', yOffset: -80, xOffset: 30, duration: 18, color: 'bg-[#e0710d]/20' },
+                { size: 40, top: '35%', left: '15%', yOffset: -120, xOffset: -40, duration: 22, color: 'bg-[#bb6a48]/15' },
+                { size: 30, top: '65%', left: '10%', yOffset: -70, xOffset: 15, duration: 19, color: 'bg-[#9a1118]/10' },
+                { size: 45, top: '85%', left: '25%', yOffset: -100, xOffset: -20, duration: 21, color: 'bg-[#e0710d]/20' },
+                { size: 35, top: '15%', left: '45%', yOffset: -90, xOffset: 25, duration: 20, color: 'bg-[#bb6a48]/15' },
+                { size: 28, top: '50%', left: '40%', yOffset: -110, xOffset: -35, duration: 23, color: 'bg-[#9a1118]/10' },
+                { size: 42, top: '75%', left: '55%', yOffset: -75, xOffset: 40, duration: 17, color: 'bg-[#e0710d]/20' },
+                { size: 32, top: '25%', left: '70%', yOffset: -95, xOffset: -25, duration: 19, color: 'bg-[#bb6a48]/15' },
+                { size: 38, top: '60%', left: '75%', yOffset: -85, xOffset: 30, duration: 20, color: 'bg-[#9a1118]/10' },
+                { size: 36, top: '40%', left: '90%', yOffset: -105, xOffset: -20, duration: 18, color: 'bg-[#e0710d]/20' },
+                { size: 26, top: '80%', left: '85%', yOffset: -65, xOffset: 10, duration: 21, color: 'bg-[#bb6a48]/15' },
+                { size: 34, top: '5%', left: '60%', yOffset: -115, xOffset: -30, duration: 22, color: 'bg-[#9a1118]/10' },
+              ].map((particle, i) => (
+                <motion.div
+                  key={i}
+                  className={`absolute rounded-full ${particle.color}`}
+                  style={{
+                    width: `${particle.size}px`,
+                    height: `${particle.size}px`,
+                    top: particle.top,
+                    left: particle.left,
+                  }}
+                  animate={{
+                    y: [0, particle.yOffset],
+                    x: [0, particle.xOffset],
+                    opacity: [0.7, 0],
+                  }}
+                  transition={{
+                    duration: particle.duration,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                />
+              ))}
+              
+              {/* Gradient Orbs */}
+              <motion.div 
+                className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-gradient-to-br from-[#e0710d]/20 to-transparent blur-3xl"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.5, 0.3],
+                }}
+                transition={{ 
+                  duration: 8, 
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+              <motion.div 
+                className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-gradient-to-tr from-[#bb6a48]/20 to-transparent blur-3xl"
+                animate={{ 
+                  scale: [1, 1.1, 1],
+                  opacity: [0.2, 0.4, 0.2],
+                }}
+                transition={{ 
+                  duration: 10, 
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  delay: 2,
+                }}
+              />
+            </MotionDiv>
+          )}
+        </div>
+        
+        <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center space-y-12">
             <MotionDiv variants={bounceIn} className="flex justify-center">
               <Badge className="mb-6 bg-[#e0710d]/10 text-[#e0710d] border-[#e0710d]/20 hover:bg-[#e0710d]/20 px-6 py-3 text-lg font-semibold rounded-2xl">
@@ -201,13 +297,13 @@ export default function LandingPage() {
             </MotionDiv>
             
             <div className="space-y-8">
-              <MotionH1 variants={fadeInUp} className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#292927] leading-tight">
+              <MotionH1 variants={fadeInUp} className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-[#292927] leading-tight">
                 Servizi per la Casa con
                 <span className="text-[#e0710d] block mt-2">
                   Cappomano
                 </span>
               </MotionH1>
-              <MotionP variants={fadeInUp} className="text-xl lg:text-2xl text-[#292927]/70 leading-relaxed max-w-4xl mx-auto">
+              <MotionP variants={fadeInUp} className="font-outfit text-xl lg:text-2xl text-[#292927]/70 leading-relaxed max-w-4xl mx-auto">
                 La prima piattaforma italiana che unisce servizi domestici professionali con pagamenti in criptovalute e
                 sistema di credito integrato. Con Cappomano, tutto è a portata di mano.
               </MotionP>
@@ -242,14 +338,16 @@ export default function LandingPage() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={staggerContainer}
+        itemScope
+        itemType="https://schema.org/Service"
       >
         <div className="container mx-auto max-w-7xl">
           <MotionDiv variants={fadeInUp} className="text-center mb-20">
             <div className="space-y-8">
-              <MotionH2 variants={fadeInUp} className="text-4xl lg:text-5xl font-bold text-[#292927] leading-tight">
+              <MotionH2 variants={fadeInUp} className="font-playfair text-4xl lg:text-5xl font-bold text-[#292927] leading-tight">
                 I Nostri Servizi
               </MotionH2>
-              <MotionP variants={fadeInUp} className="text-xl lg:text-2xl text-[#292927]/70 leading-relaxed max-w-3xl mx-auto">
+              <MotionP variants={fadeInUp} className="font-outfit text-xl lg:text-2xl text-[#292927]/70 leading-relaxed max-w-3xl mx-auto">
                 Professionisti verificati per ogni esigenza della tua casa, tutto con Cappomano
               </MotionP>
             </div>
@@ -270,10 +368,10 @@ export default function LandingPage() {
         <div className="container mx-auto max-w-7xl">
           <MotionDiv variants={fadeInUp} className="text-center mb-20">
             <div className="space-y-8">
-              <MotionH2 variants={fadeInUp} className="text-4xl lg:text-5xl font-bold text-[#292927] leading-tight">
+              <MotionH2 variants={fadeInUp} className="font-playfair text-4xl lg:text-5xl font-bold text-[#292927] leading-tight">
                 Perché Scegliere Cappomano
               </MotionH2>
-              <MotionP variants={fadeInUp} className="text-xl lg:text-2xl text-[#292927]/70 leading-relaxed max-w-3xl mx-auto">
+              <MotionP variants={fadeInUp} className="font-outfit text-xl lg:text-2xl text-[#292927]/70 leading-relaxed max-w-3xl mx-auto">
                 Innovazione e sicurezza per i tuoi pagamenti
               </MotionP>
             </div>
@@ -311,6 +409,8 @@ export default function LandingPage() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={staggerContainer}
+        itemScope
+        itemType="https://schema.org/Organization"
       >
         <div className="container mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-20 lg:gap-24 items-center">
@@ -318,15 +418,15 @@ export default function LandingPage() {
             <MotionDiv variants={fadeInLeft} className="space-y-12">
               {/* Header Section */}
               <div className="space-y-8">
-                <MotionH2 variants={fadeInUp} className="text-4xl lg:text-5xl font-bold text-[#292927] leading-tight mb-6">
+                <MotionH2 variants={fadeInUp} className="font-playfair text-4xl lg:text-5xl font-bold text-[#292927] leading-tight mb-6">
                   Chi Siamo
                 </MotionH2>
                 <div className="space-y-6">
-                  <MotionP variants={fadeInUp} className="text-lg lg:text-xl text-[#292927]/70 leading-relaxed">
+                  <MotionP variants={fadeInUp} className="font-outfit text-lg lg:text-xl text-[#292927]/70 leading-relaxed">
                     <strong className="text-[#e0710d] font-semibold">Cappomano</strong> nasce nel cuore di Milano con una missione chiara: rivoluzionare il settore
                     dei servizi domestici attraverso l&apos;innovazione tecnologica e i pagamenti digitali.
                   </MotionP>
-                  <MotionP variants={fadeInUp} className="text-lg lg:text-xl text-[#292927]/70 leading-relaxed">
+                  <MotionP variants={fadeInUp} className="font-outfit text-lg lg:text-xl text-[#292927]/70 leading-relaxed">
                     Siamo la prima piattaforma italiana che unisce la tradizione dei servizi per la casa con le più moderne
                     tecnologie di pagamento, incluse le criptovalute e sistemi di credito flessibili.
                   </MotionP>
@@ -335,12 +435,12 @@ export default function LandingPage() {
 
               {/* Key Features Section */}
               <MotionDiv variants={fadeInUp} className="space-y-5">
-                <h3 className="text-2xl font-bold text-[#292927] mb-6">I Nostri Punti di Forza</h3>
+                <h3 className="font-playfair text-2xl font-bold text-[#292927] mb-6">I Nostri Punti di Forza</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-5 p-5 bg-[#e2dacd]/20 rounded-2xl border border-[#e2dacd]/30 hover:bg-[#e2dacd]/30 transition-colors">
                     <div className="w-4 h-4 bg-[#e0710d] rounded-full mt-1.5 flex-shrink-0"></div>
                     <div>
-                      <p className="text-[#292927] font-semibold mb-2">Innovazione Tecnologica</p>
+                      <p className="font-outfit text-[#292927] font-semibold mb-2">Innovazione Tecnologica</p>
                       <p className="text-[#292927]/70 leading-relaxed">Primi in Italia ad accettare Bitcoin ed Ethereum per servizi domestici</p>
                     </div>
                   </div>
@@ -480,6 +580,8 @@ export default function LandingPage() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         ref={contactFormRef}
+        itemScope
+        itemType="https://schema.org/ContactPoint"
       >
         <div className="container mx-auto max-w-7xl">
           <ContactForm initialService={selectedService} />
@@ -511,10 +613,10 @@ export default function LandingPage() {
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center">
             <div className="space-y-8">
-              <MotionH2 variants={fadeInUp} className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+              <MotionH2 variants={fadeInUp} className="font-playfair text-4xl lg:text-5xl font-bold text-white leading-tight">
                 Pronto a Iniziare con Cappomano?
               </MotionH2>
-              <MotionP variants={fadeInUp} className="text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+              <MotionP variants={fadeInUp} className="font-outfit text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl mx-auto">
                 Unisciti alla rivoluzione dei pagamenti crypto per i servizi domestici
               </MotionP>
               <MotionDiv variants={fadeInUp} className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
