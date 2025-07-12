@@ -10,6 +10,7 @@ import {
 
 const ComingSoonPhoneSection = () => (
   <MotionSection
+    id="coming-soon-phone"
     className="py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-200"
     initial="hidden"
     whileInView="visible"

@@ -73,6 +73,20 @@ export default function LandingPage() {
     }, 100); // Wait for state update/render
   };
 
+  // Handle scroll to services section
+  const handleIniziaOraClick = () => {
+    const servicesSection = document.getElementById("services");
+    if (servicesSection) {
+      const headerHeight = 80; // Approximate header height
+      const elementPosition = servicesSection.offsetTop - headerHeight;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#e2dacd] overflow-x-hidden">
       {/* Add SEO enhancements */}
@@ -117,7 +131,7 @@ export default function LandingPage() {
               <Link href="#contact-form" className="text-[#292927]/70 hover:text-[#292927] transition-colors">
                 Contatti
               </Link>
-              <Button className="bg-[#e0710d] text-white hover:bg-[#bb6a48] hover:scale-105 transition-transform">Inizia Ora</Button>
+              <Button className="bg-[#e0710d] text-white hover:bg-[#bb6a48] hover:scale-105 transition-transform" onClick={handleIniziaOraClick}>Inizia Ora</Button>
             </MotionDiv>
 
             {/* Mobile Menu Button */}
@@ -135,11 +149,11 @@ export default function LandingPage() {
                     <span className="font-playfair">Cappomano</span>
                   </SheetTitle>
                 </SheetHeader>
-                <div className="flex flex-col space-y-4 mt-8">
+                <div className="flex flex-col space-y-6 mt-12 px-4 overflow-y-auto max-h-[calc(100vh-120px)] pb-6">
                   <SheetClose asChild>
                     <Link
                       href="#services"
-                      className="text-lg font-medium text-[#292927]/70 hover:text-[#292927] py-2 hover:translate-x-2 transition-all duration-300"
+                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#e0710d] py-4 px-6 rounded-2xl hover:bg-[#e2dacd]/20 transition-all duration-300 border border-transparent hover:border-[#e0710d]/20"
                     >
                       Servizi
                     </Link>
@@ -147,7 +161,7 @@ export default function LandingPage() {
                   <SheetClose asChild>
                     <Link
                       href="#features"
-                      className="text-lg font-medium text-[#292927]/70 hover:text-[#292927] py-2 hover:translate-x-2 transition-all duration-300"
+                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#e0710d] py-4 px-6 rounded-2xl hover:bg-[#e2dacd]/20 transition-all duration-300 border border-transparent hover:border-[#e0710d]/20"
                     >
                       Caratteristiche
                     </Link>
@@ -155,7 +169,7 @@ export default function LandingPage() {
                   <SheetClose asChild>
                     <Link
                       href="#about"
-                      className="text-lg font-medium text-[#292927]/70 hover:text-[#292927] py-2 hover:translate-x-2 transition-all duration-300"
+                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#e0710d] py-4 px-6 rounded-2xl hover:bg-[#e2dacd]/20 transition-all duration-300 border border-transparent hover:border-[#e0710d]/20"
                     >
                       Chi Siamo
                     </Link>
@@ -163,24 +177,24 @@ export default function LandingPage() {
                   <SheetClose asChild>
                     <Link
                       href="#contact-form"
-                      className="text-lg font-medium text-[#292927]/70 hover:text-[#292927] py-2 hover:translate-x-2 transition-all duration-300"
+                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#e0710d] py-4 px-6 rounded-2xl hover:bg-[#e2dacd]/20 transition-all duration-300 border border-transparent hover:border-[#e0710d]/20"
                     >
                       Contatti
                     </Link>
                   </SheetClose>
-                  <div className="pt-4 border-t">
+                  <div className="pt-6 border-t border-[#e2dacd]/30">
                     <SheetClose asChild>
-                      <Button className="w-full bg-[#e0710d] text-white hover:bg-[#bb6a48] hover:scale-105 transition-transform">
+                      <Button className="w-full bg-[#e0710d] text-white hover:bg-[#bb6a48] hover:scale-105 transition-transform py-6 text-lg font-semibold rounded-2xl" onClick={handleIniziaOraClick}>
                         Inizia Ora
                       </Button>
                     </SheetClose>
                   </div>
-                  <div className="pt-4">
-                    <p className="text-sm text-gray-500 mb-4">Contattaci direttamente:</p>
+                  <div className="pt-6">
+                    <p className="text-center text-sm text-gray-500 mb-4">Contattaci direttamente:</p>
                     <SheetClose asChild>
                       <Button
                         variant="outline"
-                        className="w-full bg-transparent hover:scale-105 transition-transform"
+                        className="w-full bg-transparent hover:scale-105 transition-transform border-[#e0710d]/30 hover:border-[#e0710d] py-6 text-lg font-semibold rounded-2xl"
                         asChild
                       >
                         <a
@@ -189,7 +203,7 @@ export default function LandingPage() {
                           rel="noopener noreferrer"
                           className="flex items-center justify-center space-x-2"
                         >
-                          <MessageCircle className="w-4 h-4" />
+                          <MessageCircle className="w-5 h-5" />
                           <span>WhatsApp</span>
                         </a>
                       </Button>
