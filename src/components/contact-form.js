@@ -63,12 +63,12 @@ export default function ContactForm({ initialService = "" }) {
   }, [showSuccessModal]);
 
   const services = [
-    "Bricolage",
-    "Jardinage",
-    "Ménage",
-    "Déménagement",
-    "Aide à domicile",
-    "Garde d'animaux",
+    "Elettricista Milano",
+    "Idraulico Milano", 
+    "Pulizie Casa Milano",
+    "Traslochi Milano",
+    "Giardinaggio Milano",
+    "Muratore Milano",
   ]
 
   const handleInputChange = (field, value) => {
@@ -190,19 +190,19 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
             >
               <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
             </MotionDiv>
-            <DialogTitle className="text-2xl font-bold text-gray-900 mb-2">
+            <DialogTitle className="text-2xl font-bold text-[#292927] mb-2">
               {submissionType === "email" 
                 ? "Email Inviata!" 
                 : "Richiesta Inviata!"}
             </DialogTitle>
-            <p className="text-gray-600 mb-4">
+            <p className="text-[#292927]/70 mb-4">
               {submissionType === "email"
                 ? "Abbiamo ricevuto la tua richiesta e ti risponderemo via email il prima possibile."
                 : "Sei stato reindirizzato a WhatsApp per completare l'invio del messaggio."}
             </p>
             <Button 
               onClick={() => setShowSuccessModal(false)}
-              className="bg-[#e0710d] text-white hover:bg-[#bb6a48]"
+              className="bg-[#e0710d] text-white hover:bg-[#bb6a48] transition-all duration-200 hover:scale-105"
             >
               Chiudi
             </Button>
@@ -223,37 +223,60 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
           },
         }}
       >
-        <Card className="max-w-2xl mx-auto shadow-xl border-0">
+        <Card className="max-w-2xl mx-auto shadow-2xl border-0 bg-white rounded-3xl overflow-visible relative backdrop-blur-sm">
+          {/* Decorative circles - only 3 maximum with proper z-index */}
+          <div className="absolute -top-6 -right-6 w-12 h-12 bg-[#e0710d] rounded-full opacity-40 z-[100]"></div>
+          <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-[#bb6a48] rounded-full opacity-35 z-[100]"></div>
+          <div className="absolute top-1/3 -right-3 w-6 h-6 bg-[#9a1118] rounded-full opacity-30 z-[100]"></div>
+          
+          {/* Subtle animated background pattern */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#e2dacd]/5 via-transparent to-[#e0710d]/5 z-0"></div>
+          
           <MotionDiv variants={fadeInUp}>
-            <CardHeader className="text-center pb-6">
-              <CardTitle className="text-3xl font-bold text-gray-900 mb-2">Contattaci</CardTitle>
-              <CardDescription className="text-lg text-gray-600">
-                Compila il form per ricevere un preventivo personalizzato
-              </CardDescription>
+            <CardHeader className="text-center pb-8 pt-10 bg-gradient-to-br from-[#e2dacd]/20 to-[#e0710d]/10 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/3"></div>
+              
+              <div className="relative z-10 p-6">
+                <div className="inline-block p-3 bg-[#e0710d]/10 rounded-full mb-4">
+                  <div className="w-8 h-8 bg-[#e0710d] rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">C</span>
+                  </div>
+                </div>
+                <CardTitle className="text-4xl font-bold text-[#292927] mb-3 bg-gradient-to-r from-[#292927] to-[#e0710d] bg-clip-text text-transparent">
+                  Contatta Cappomano
+                </CardTitle>
+                <CardDescription className="text-lg text-[#292927]/70 max-w-md mx-auto leading-relaxed">
+                  ✨ Richiedi un preventivo gratuito per i tuoi servizi a Milano
+                </CardDescription>
+              </div>
             </CardHeader>
           </MotionDiv>
 
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <CardContent className="p-8 bg-gradient-to-b from-white to-[#e2dacd]/5 relative">
+            {/* Subtle decorative elements in content area */}
+            <div className="absolute top-4 right-4 w-6 h-6 bg-[#e0710d]/10 rounded-full"></div>
+            <div className="absolute bottom-8 left-4 w-4 h-4 bg-[#bb6a48]/10 rounded-full"></div>
+            
+            <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
               {/* Customer Type Selection */}
               <MotionDiv variants={fadeInUp} className="space-y-2">
-                <Label htmlFor="customerType" className="text-sm font-medium text-gray-700">
+                <Label htmlFor="customerType" className="text-sm font-medium text-[#292927]">
                   Tipo di Cliente *
                 </Label>
                 <Select value={formData.customerType} onValueChange={(value) => handleInputChange("customerType", value)}>
-                  <SelectTrigger className="w-full">
+                  <SelectTrigger className="w-full border-[#e2dacd] focus:border-[#e0710d] focus:ring-[#e0710d]/20">
                     <SelectValue placeholder="Seleziona il tipo di cliente" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="individual">
                       <div className="flex items-center space-x-2">
-                        <User className="w-4 h-4 text-blue-500" />
+                        <User className="w-4 h-4 text-[#e0710d]" />
                         <span>Privato/Individuale</span>
                       </div>
                     </SelectItem>
                     <SelectItem value="business">
                       <div className="flex items-center space-x-2">
-                        <Building2 className="w-4 h-4 text-orange-500" />
+                        <Building2 className="w-4 h-4 text-[#bb6a48]" />
                         <span>Azienda/Business</span>
                       </div>
                     </SelectItem>
@@ -261,7 +284,7 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
                 </Select>
                 {formData.customerType && (
                   <MotionDiv initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mt-2">
-                    <Badge variant="outline" className="text-xs">
+                    <Badge variant="outline" className="text-xs border-[#e0710d] text-[#e0710d]">
                       {formData.customerType === "individual" ? (
                         <>
                           <User className="w-3 h-3 mr-1" />
@@ -281,7 +304,7 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
               {/* Personal Information */}
               <MotionDiv variants={fadeInUp} className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="firstName" className="text-sm font-medium text-gray-700">
+                  <Label htmlFor="firstName" className="text-sm font-medium text-[#292927]">
                     Nome *
                   </Label>
                   <Input
@@ -291,11 +314,11 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
                     value={formData.firstName}
                     onChange={(e) => handleInputChange("firstName", e.target.value)}
                     required
-                    className="transition-all duration-200 focus:scale-[1.02]"
+                    className="transition-all duration-200 focus:scale-[1.02] border-[#e2dacd] focus:border-[#e0710d] focus:ring-[#e0710d]/20"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="lastName" className="text-sm font-medium text-gray-700">
+                  <Label htmlFor="lastName" className="text-sm font-medium text-[#292927]">
                     Cognome *
                   </Label>
                   <Input
@@ -305,7 +328,7 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
                     value={formData.lastName}
                     onChange={(e) => handleInputChange("lastName", e.target.value)}
                     required
-                    className="transition-all duration-200 focus:scale-[1.02]"
+                    className="transition-all duration-200 focus:scale-[1.02] border-[#e2dacd] focus:border-[#e0710d] focus:ring-[#e0710d]/20"
                   />
                 </div>
               </MotionDiv>
@@ -319,7 +342,7 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
                   exit={{ opacity: 0, height: 0 }}
                   className="space-y-2"
                 >
-                  <Label htmlFor="company" className="text-sm font-medium text-gray-700">
+                  <Label htmlFor="company" className="text-sm font-medium text-[#292927]">
                     Nome Azienda *
                   </Label>
                   <Input
@@ -329,7 +352,7 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
                     value={formData.company}
                     onChange={(e) => handleInputChange("company", e.target.value)}
                     required={formData.customerType === "business"}
-                    className="transition-all duration-200 focus:scale-[1.02]"
+                    className="transition-all duration-200 focus:scale-[1.02] border-[#e2dacd] focus:border-[#e0710d] focus:ring-[#e0710d]/20"
                   />
                 </MotionDiv>
               )}
@@ -337,11 +360,11 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
               {/* Contact Information */}
               <MotionDiv variants={fadeInUp} className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                  <Label htmlFor="email" className="text-sm font-medium text-[#292927]">
                     Email *
                   </Label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#e0710d] w-4 h-4" />
                     <Input
                       id="email"
                       type="email"
@@ -349,23 +372,23 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
                       value={formData.email}
                       onChange={(e) => handleInputChange("email", e.target.value)}
                       required
-                      className="pl-10 transition-all duration-200 focus:scale-[1.02]"
+                      className="pl-10 transition-all duration-200 focus:scale-[1.02] border-[#e2dacd] focus:border-[#e0710d] focus:ring-[#e0710d]/20"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-sm font-medium text-gray-700">
+                  <Label htmlFor="phone" className="text-sm font-medium text-[#292927]">
                     Telefono
                   </Label>
                   <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                    <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#e0710d] w-4 h-4" />
                     <Input
                       id="phone"
                       type="tel"
                       placeholder="+39 123 456 7890"
                       value={formData.phone}
                       onChange={(e) => handleInputChange("phone", e.target.value)}
-                      className="pl-10 transition-all duration-200 focus:scale-[1.02]"
+                      className="pl-10 transition-all duration-200 focus:scale-[1.02] border-[#e2dacd] focus:border-[#e0710d] focus:ring-[#e0710d]/20"
                     />
                   </div>
                 </div>
@@ -373,11 +396,11 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
 
               {/* Service Selection */}
               <MotionDiv variants={fadeInUp} className="space-y-2">
-                <Label htmlFor="service" className="text-sm font-medium text-gray-700">
+                <Label htmlFor="service" className="text-sm font-medium text-[#292927]">
                   Servizio Richiesto
                 </Label>
                 <Select value={formData.service} onValueChange={(value) => handleInputChange("service", value)}>
-                  <SelectTrigger className="w-full">
+                  <SelectTrigger className="w-full border-[#e2dacd] focus:border-[#e0710d] focus:ring-[#e0710d]/20">
                     <SelectValue placeholder="Seleziona il servizio di interesse" />
                   </SelectTrigger>
                   <SelectContent>
@@ -392,64 +415,78 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
 
               {/* Message */}
               <MotionDiv variants={fadeInUp} className="space-y-2">
-                <Label htmlFor="message" className="text-sm font-medium text-gray-700">
+                <Label htmlFor="message" className="text-sm font-medium text-[#292927]">
                   Messaggio
                 </Label>
                 <div className="relative">
-                  <MessageSquare className="absolute left-3 top-3 text-gray-400 w-4 h-4" />
+                  <MessageSquare className="absolute left-3 top-3 text-[#e0710d] w-4 h-4" />
                   <Textarea
                     id="message"
                     placeholder="Descrivi le tue esigenze o fai una domanda..."
                     value={formData.message}
                     onChange={(e) => handleInputChange("message", e.target.value)}
                     rows={4}
-                    className="pl-10 resize-none transition-all duration-200 focus:scale-[1.02]"
+                    className="pl-10 resize-none transition-all duration-200 focus:scale-[1.02] border-[#e2dacd] focus:border-[#e0710d] focus:ring-[#e0710d]/20"
                   />
                 </div>
               </MotionDiv>
 
               {/* Payment Methods Info */}
-              <MotionDiv variants={fadeInUp} className="bg-gradient-to-r from-orange-50 to-blue-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-gray-900 mb-2">Metodi di Pagamento Accettati:</h4>
+              <MotionDiv variants={fadeInUp} className="bg-gradient-to-r from-[#e2dacd]/30 to-[#e0710d]/10 p-4 rounded-lg border border-[#e2dacd]">
+                <h4 className="font-semibold text-[#292927] mb-2 flex items-center">
+                  <span className="mr-2">💳</span>
+                  Metodi di Pagamento Accettati:
+                </h4>
                 <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-200">💰 Bitcoin</Badge>
-                  <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200">💎 Ethereum</Badge>
-                  <Badge className="bg-green-100 text-green-800 hover:bg-green-200">💳 Sistema Credito</Badge>
-                  <Badge className="bg-purple-100 text-purple-800 hover:bg-purple-200">🏦 Tradizionali</Badge>
+                  <Badge className="bg-[#e0710d]/10 text-[#e0710d] hover:bg-[#e0710d]/20 border-[#e0710d]/20">💰 Contanti</Badge>
+                  <Badge className="bg-[#bb6a48]/10 text-[#bb6a48] hover:bg-[#bb6a48]/20 border-[#bb6a48]/20">� Carta</Badge>
+                  <Badge className="bg-[#292927]/10 text-[#292927] hover:bg-[#292927]/20 border-[#292927]/20">🏦 Bonifico</Badge>
+                  <Badge className="bg-[#e0710d]/10 text-[#e0710d] hover:bg-[#e0710d]/20 border-[#e0710d]/20">📱 Digitale</Badge>
                 </div>
               </MotionDiv>
 
               {/* Submit Button */}
               <MotionDiv variants={scaleIn}>
-                <Button
-                  type="submit"
-                  disabled={
-                    isSubmitting || !formData.customerType || !formData.firstName || !formData.lastName || !formData.email
-                  }
-                  className="w-full bg-gradient-to-r from-orange-500 to-blue-600 hover:from-orange-600 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 hover:scale-[1.02]"
-                  size="lg"
-                >
-                  {isSubmitting ? (
-                    <MotionDiv
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-                      className="w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2"
-                    />
-                  ) : (
-                    <Send className="w-5 h-5 mr-2" />
-                  )}
-                  {isSubmitting ? "Invio in corso..." : "Invia Richiesta"}
-                </Button>
+                <div className="relative">
+                  {/* Decorative background for button */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#e0710d] to-[#bb6a48] rounded-2xl opacity-20 blur-lg"></div>
+                  
+                  <Button
+                    type="submit"
+                    disabled={
+                      isSubmitting || !formData.customerType || !formData.firstName || !formData.lastName || !formData.email
+                    }
+                    className="w-full bg-gradient-to-r from-[#e0710d] to-[#bb6a48] hover:from-[#bb6a48] hover:to-[#e0710d] text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed shadow-xl relative z-10 border-2 border-white/20"
+                    size="lg"
+                  >
+                    <div className="flex items-center justify-center">
+                      {isSubmitting ? (
+                        <MotionDiv
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                          className="w-6 h-6 border-3 border-white border-t-transparent rounded-full mr-3"
+                        />
+                      ) : (
+                        <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center mr-3">
+                          <Send className="w-5 h-5" />
+                        </div>
+                      )}
+                      <span className="text-lg">
+                        {isSubmitting ? "Invio in corso..." : "🚀 Prenota Ora"}
+                      </span>
+                    </div>
+                  </Button>
+                </div>
               </MotionDiv>
 
-              <MotionDiv variants={fadeInUp} className="text-center text-sm text-gray-500">
+              <MotionDiv variants={fadeInUp} className="text-center text-sm text-[#292927]/70">
                 <p>
                   Compilando questo form accetti la nostra{" "}
-                  <a href="#" className="text-orange-600 hover:underline">
+                  <a href="#" className="text-[#e0710d] hover:text-[#bb6a48] hover:underline">
                     Privacy Policy
                   </a>{" "}
                   e i{" "}
-                  <a href="#" className="text-orange-600 hover:underline">
+                  <a href="#" className="text-[#e0710d] hover:text-[#bb6a48] hover:underline">
                     Termini di Servizio
                   </a>
                 </p>

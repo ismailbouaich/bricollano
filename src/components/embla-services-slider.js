@@ -3,80 +3,94 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { ChevronLeft, ChevronRight, Star, Clock } from 'lucide-react'
+import { 
+  FaTools, 
+  FaSeedling, 
+  FaBroom, 
+  FaTruck, 
+  FaHandHoldingHeart, 
+  FaDog 
+} from 'react-icons/fa'
 import { Button } from '@/components/ui/button'
 import { MotionDiv, fadeInUp } from "@/components/motion-wrapper"
 
 const services = [
   {
-    id: 'bricolage',
-    title: 'Bricolage',
-    description: 'Riparazioni e piccoli lavori domestici',
-    price: '€30/ora',
+    id: 'elettricista',
+    title: 'Elettricista Milano',
+    description: 'Impianti elettrici, riparazioni e installazioni',
+    price: '€35/ora',
     rating: 4.8,
     reviews: 156,
-    image: '/assets/image/bricolage.jpg',
+    icon: FaTools,
+    iconColor: '#e0710d',
     duration: '1-3 ore',
-    features: ['Montaggio mobili', 'Riparazioni', 'Installazioni', 'Manutenzione'],
+    features: ['Impianti elettrici', 'Riparazioni urgenti', 'Installazioni', 'Certificazioni'],
     popular: true,
   },
   {
-    id: 'jardinage',
-    title: 'Jardinage',
-    description: 'Cura del verde e manutenzione giardini',
-    price: '€35/ora',
+    id: 'idraulico',
+    title: 'Idraulico Milano',
+    description: 'Riparazioni idrauliche e manutenzione impianti',
+    price: '€40/ora',
     rating: 4.7,
     reviews: 124,
-    image: '/assets/image/giardinieri.jpg',
-    duration: '2-4 ore',
-    features: ['Potatura', 'Irrigazione', 'Semina', 'Concimazione'],
-    popular: false,
+    icon: FaTools,
+    iconColor: '#bb6a48',
+    duration: '1-4 ore',
+    features: ['Perdite d\'acqua', 'Installazioni', 'Manutenzione', 'Pronto intervento'],
+    popular: true,
   },
   {
-    id: 'menage',
-    title: 'Ménage',
-    description: 'Pulizia completa di casa e ufficio',
+    id: 'pulizie',
+    title: 'Pulizie Casa',
+    description: 'Pulizia completa di casa e ufficio a Milano',
     price: '€28/ora',
     rating: 4.9,
     reviews: 342,
-    image: '/assets/image/pulizia.jpg',
+    icon: FaBroom,
+    iconColor: '#9a1118',
     duration: '2-6 ore',
     features: ['Pulizia completa', 'Prodotti inclusi', 'Personale qualificato', 'Sanificazione'],
     popular: true,
   },
   {
-    id: 'demenagement',
-    title: 'Déménagement',
+    id: 'traslochi',
+    title: 'Traslochi Milano',
     description: 'Servizi di trasloco e trasporto mobili',
-    price: '€40/ora',
+    price: '€45/ora',
     rating: 4.6,
     reviews: 98,
-    image: '/assets/image/trasloco.jpg',
+    icon: FaTruck,
+    iconColor: '#e0710d',
     duration: '3-8 ore',
     features: ['Imballaggio', 'Trasporto', 'Montaggio', 'Smontaggio'],
     popular: false,
   },
   {
-    id: 'aide-domicile',
-    title: 'Aide à domicile',
-    description: 'Assistenza e supporto domiciliare',
-    price: '€25/ora',
-    rating: 4.9,
+    id: 'giardinaggio',
+    title: 'Giardinaggio Milano',
+    description: 'Cura del verde e manutenzione giardini',
+    price: '€32/ora',
+    rating: 4.7,
     reviews: 183,
-    image: '/assets/image/assistenza.jpg',
-    duration: '1-4 ore',
-    features: ['Assistenza anziani', 'Supporto quotidiano', 'Preparazione pasti', 'Compagnia'],
+    icon: FaSeedling,
+    iconColor: '#22c55e',
+    duration: '2-4 ore',
+    features: ['Potatura', 'Irrigazione', 'Semina', 'Manutenzione verde'],
     popular: false,
   },
   {
-    id: 'garde-animaux',
-    title: 'Garde d&apos;animaux',
-    description: 'Servizi di dog sitting e pet care',
-    price: '€20/ora',
+    id: 'muratore',
+    title: 'Muratore Milano',
+    description: 'Lavori di muratura e ristrutturazioni',
+    price: '€38/ora',
     rating: 4.8,
     reviews: 217,
-    image: '/assets/image/animali.jpg',
-    duration: '30min-2 ore',
-    features: ['Passeggiate', 'Alimentazione', 'Gioco', 'Cure base'],
+    icon: FaTools,
+    iconColor: '#6b7280',
+    duration: '2-8 ore',
+    features: ['Ristrutturazioni', 'Riparazioni murarie', 'Piastrellature', 'Intonaci'],
     popular: false,
   }
 ]
@@ -198,64 +212,79 @@ export default function EmblaServicesSlider({ onBook = () => {} }) {
       <div className="embla">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
-            {services.map((service, index) => (
-              <div key={service.id} className="embla__slide">
-                <div className="embla__slide__content">
-                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 mx-4 h-full">
-                    <div className="relative h-48 bg-[#e2dacd]/30">
-                      <div className="absolute inset-0 bg-[#292927]/10"></div>
-                      <div className="absolute top-4 left-4">
-                        <div className="bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-semibold text-[#292927]">
-                          {service.title}
+            {services.map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <div key={service.id} className="embla__slide">
+                  <div className="embla__slide__content">
+                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 mx-4 h-full">
+                      <div className="relative h-48 bg-gradient-to-br from-[#e2dacd]/30 to-[#e2dacd]/10 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/5"></div>
+
+                        {/* Large Icon */}
+                        <div className="relative z-10 p-8">
+                          <IconComponent 
+                            size={80} 
+                            color={service.iconColor}
+                            className="drop-shadow-lg"
+                          />
                         </div>
-                      </div>
-                      <div className="absolute bottom-4 right-4">
-                        <div className="bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-bold text-[#e0710d]">
-                          {service.price}
-                        </div>
-                      </div>
-                      {service.popular && (
-                        <div className="absolute top-4 right-4 bg-[#e0710d] text-white px-2 py-1 rounded-full text-xs font-semibold">
-                          🔥 Popolare
-                        </div>
-                      )}
-                    </div>
-                    
-                    <div className="p-6">
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center space-x-1">
-                          <Star className="w-4 h-4 text-[#e0710d] fill-current" />
-                          <span className="text-sm font-medium text-[#292927]">{service.rating}</span>
-                          <span className="text-xs text-[#292927]/70">({service.reviews} recensioni)</span>
-                        </div>
-                        <div className="flex items-center space-x-1 text-[#292927]/70">
-                          <Clock className="w-4 h-4" />
-                          <span className="text-xs">{service.duration}</span>
-                        </div>
-                      </div>
-                      
-                      <p className="text-[#292927]/70 mb-4 text-sm">{service.description}</p>
-                      
-                      <div className="grid grid-cols-2 gap-2 mb-4">
-                        {service.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-[#bb6a48] rounded-full"></div>
-                            <span className="text-xs text-[#292927]/70">{feature}</span>
+
+                        <div className="absolute top-4 left-4">
+                          <div className="bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-semibold text-[#292927]">
+                            {service.title}
                           </div>
-                        ))}
+                        </div>
+
+                        <div className="absolute bottom-4 right-4">
+                          <div className="bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-bold text-[#e0710d]">
+                            {service.price}
+                          </div>
+                        </div>
+
+                        {service.popular && (
+                          <div className="absolute top-4 right-4 bg-[#e0710d] text-white px-2 py-1 rounded-full text-xs font-semibold">
+                            🔥 Popolare
+                          </div>
+                        )}
                       </div>
-                      
-                      <Button 
-                        onClick={() => onBook(service.title)}
-                        className="w-full bg-[#e0710d] hover:bg-[#bb6a48] text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 hover:scale-105"
-                      >
-                        Prenota Ora
-                      </Button>
+
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="flex items-center space-x-1">
+                            <Star className="w-4 h-4 text-[#e0710d] fill-current" />
+                            <span className="text-sm font-medium text-[#292927]">{service.rating}</span>
+                            <span className="text-xs text-[#292927]/70">({service.reviews} recensioni)</span>
+                          </div>
+                          <div className="flex items-center space-x-1 text-[#292927]/70">
+                            <Clock className="w-4 h-4" />
+                            <span className="text-xs">{service.duration}</span>
+                          </div>
+                        </div>
+
+                        <p className="text-[#292927]/70 mb-4 text-sm">{service.description}</p>
+
+                        <div className="grid grid-cols-2 gap-2 mb-4">
+                          {service.features.map((feature, featureIndex) => (
+                            <div key={featureIndex} className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-[#bb6a48] rounded-full"></div>
+                              <span className="text-xs text-[#292927]/70">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+
+                        <Button 
+                          onClick={() => onBook(service.title)}
+                          className="w-full bg-[#e0710d] hover:bg-[#bb6a48] text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 hover:scale-105"
+                        >
+                          Prenota Ora
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
         
@@ -298,3 +327,4 @@ export default function EmblaServicesSlider({ onBook = () => {} }) {
     </MotionDiv>
   )
 }
+
