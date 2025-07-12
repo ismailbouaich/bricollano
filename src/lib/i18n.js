@@ -14,7 +14,7 @@ export const i18n = {
     // Add other domains for different locales if needed
     // {
     //   domain: 'cappomano.com',
-    //   defaultLocale: 'en',
+    //   defaultLocale: 'en',    
     // },
   ],
 }
