@@ -24,10 +24,10 @@ export default function Footer() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Hand className="w-10 h-10 text-[#e0710d]" />
-                  <span className="text-3xl font-bold">Cappomano</span>
+                  <span className="text-3xl font-bold">Bricollano</span>
                 </div>
                 <p className="text-[#e2dacd]/80 text-lg leading-relaxed">
-                  La piattaforma innovativa per servizi domestici con pagamenti crypto. Tutto a portata di mano.
+                  La piattaforma leader per servizi di riparazione e manutenzione casa a Milano. Professionisti qualificati a portata di mano.
                 </p>
               </div>
               <div className="space-y-4">
@@ -37,20 +37,19 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center space-x-3 p-3 bg-[#e2dacd]/10 rounded-2xl">
                   <div className="w-3 h-3 bg-[#bb6a48] rounded-full flex-shrink-0"></div>
-                  <span className="text-[#e2dacd]/90 font-medium">Servizi attivi in Milano e Provincia</span>
+                  <span className="text-[#e2dacd]/90 font-medium">Riparazioni e manutenzione in tutta Milano</span>
                 </div>
               </div>
             </MotionDiv>
             
             <MotionDiv variants={fadeInUp} className="space-y-6">
-              <h3 className="text-2xl font-bold mb-4">Servizi</h3>
+              <h3 className="text-2xl font-bold mb-4">Servizi Milano</h3>
               <ul className="space-y-4">
-                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Bricolage</li>
-                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Jardinage</li>
-                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Ménage</li>
-                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Déménagement</li>
-                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Aide à domicile</li>
-                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Garde d&apos;animaux</li>
+                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Elettricista Milano</li>
+                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Idraulico Milano</li>
+                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Muratore Milano</li>
+                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Riparazioni Casa</li>
+                <li className="hover:text-[#e0710d] cursor-pointer text-[#e2dacd]/80 hover:translate-x-2 transition-all duration-300 py-1">Manutenzione</li>
               </ul>
             </MotionDiv>
             
@@ -80,7 +79,7 @@ export default function Footer() {
           </MotionDiv>
           
           <MotionDiv variants={fadeIn} className="border-t border-[#bb6a48]/30 mt-16 pt-8 text-center">
-            <p className="text-[#e2dacd]/80 text-lg">&copy; 2024 Cappomano. Tutti i diritti riservati.</p>
+            <p className="text-[#e2dacd]/80 text-lg">&copy; 2024 Bricollano. Tutti i diritti riservati.</p>
           </MotionDiv>
         </div>
       </MotionSection>

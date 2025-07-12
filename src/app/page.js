@@ -32,23 +32,23 @@ export default function LandingPage() {
   const features = [
     {
       icon: <Bitcoin className="w-6 h-6" />,
-      title: "Pagamenti Crypto",
-      description: "Accettiamo Bitcoin, Ethereum e altre criptovalute",
+      title: "Pagamenti Innovativi",
+      description: "Primo a Milano ad accettare Bitcoin, Ethereum e pagamenti crypto per servizi casa",
     },
     {
       icon: <CreditCard className="w-6 h-6" />,
       title: "Credito Flessibile",
-      description: "Sistema di credito integrato per pagamenti dilazionati",
+      description: "Sistema di credito personalizzato per riparazioni e manutenzione casa a Milano",
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Sicurezza Garantita",
-      description: "Transazioni sicure e professionisti verificati",
+      title: "Professionisti Certificati",
+      description: "Elettricisti, idraulici e muratori qualificati e verificati a Milano",
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "Prenotazione Rapida",
-      description: "Prenota i servizi in pochi click",
+      title: "Servizio Rapido",
+      description: "Interventi veloci per riparazioni urgenti in tutta Milano e provincia",
     },
   ]
 
@@ -95,7 +95,7 @@ export default function LandingPage() {
               className="flex items-center space-x-2"
             >
               <Hand className="w-8 h-8 text-[#e0710d]" />
-              <span className="text-2xl font-bold text-[#292927] font-playfair brand-name">Cappomano</span>
+              <span className="text-2xl font-bold text-[#292927] font-playfair brand-name">Bricollano</span>
             </MotionDiv>
 
             {/* Desktop Navigation */}
@@ -132,7 +132,7 @@ export default function LandingPage() {
                 <SheetHeader>
                   <SheetTitle className="flex items-center space-x-2">
                     <Hand className="w-6 h-6 text-[#e0710d]" />
-                    <span className="font-playfair">Cappomano</span>
+                    <span className="font-playfair">Bricollano</span>
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col space-y-4 mt-8">
@@ -298,14 +298,14 @@ export default function LandingPage() {
             
             <div className="space-y-8">
               <MotionH1 variants={fadeInUp} className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-[#292927] leading-tight">
-                Servizi per la Casa con
+                Riparazioni e Manutenzione
                 <span className="text-[#e0710d] block mt-2">
-                  Cappomano
+                  Casa a Milano
                 </span>
               </MotionH1>
               <MotionP variants={fadeInUp} className="font-outfit text-xl lg:text-2xl text-[#292927]/70 leading-relaxed max-w-4xl mx-auto">
-                La prima piattaforma italiana che unisce servizi domestici professionali con pagamenti in criptovalute e
-                sistema di credito integrato. Con Cappomano, tutto è a portata di mano.
+                Bricollano è la piattaforma leader per servizi di riparazione e manutenzione casa a Milano. 
+                Elettricisti, idraulici e muratori qualificati con pagamenti innovativi crypto e credito flessibile.
               </MotionP>
             </div>
             
@@ -315,7 +315,7 @@ export default function LandingPage() {
                 className="bg-[#e0710d] text-white hover:bg-[#bb6a48] hover:scale-105 transition-all duration-300 px-8 py-6 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl"
               >
                 <Bitcoin className="w-6 h-6 mr-3" />
-                Prenota con Crypto
+                Richiedi Preventivo
               </Button>
               <Button 
                 size="lg" 
@@ -323,7 +323,7 @@ export default function LandingPage() {
                 className="border-2 border-[#292927] text-[#292927] hover:bg-[#292927] hover:text-white hover:scale-105 transition-all duration-300 bg-transparent px-8 py-6 text-lg font-semibold rounded-2xl"
               >
                 <CreditCard className="w-6 h-6 mr-3" />
-                Usa il Credito
+                Chiamaci Ora
               </Button>
             </MotionDiv>
           </div>
@@ -345,10 +345,10 @@ export default function LandingPage() {
           <MotionDiv variants={fadeInUp} className="text-center mb-20">
             <div className="space-y-8">
               <MotionH2 variants={fadeInUp} className="font-playfair text-4xl lg:text-5xl font-bold text-[#292927] leading-tight">
-                I Nostri Servizi
+                Servizi Professionali a Milano
               </MotionH2>
               <MotionP variants={fadeInUp} className="font-outfit text-xl lg:text-2xl text-[#292927]/70 leading-relaxed max-w-3xl mx-auto">
-                Professionisti verificati per ogni esigenza della tua casa, tutto con Cappomano
+                Elettricisti, idraulici e muratori qualificati per ogni esigenza della tua casa a Milano e provincia
               </MotionP>
             </div>
           </MotionDiv>
@@ -369,17 +369,17 @@ export default function LandingPage() {
           <MotionDiv variants={fadeInUp} className="text-center mb-20">
             <div className="space-y-8">
               <MotionH2 variants={fadeInUp} className="font-playfair text-4xl lg:text-5xl font-bold text-[#292927] leading-tight">
-                Perché Scegliere Cappomano
+                Perché Scegliere Bricollano Milano
               </MotionH2>
               <MotionP variants={fadeInUp} className="font-outfit text-xl lg:text-2xl text-[#292927]/70 leading-relaxed max-w-3xl mx-auto">
-                Innovazione e sicurezza per i tuoi pagamenti
+                Innovazione, qualità e affidabilità per i tuoi servizi di riparazione e manutenzione casa
               </MotionP>
             </div>
           </MotionDiv>
           <MotionDiv variants={staggerContainer} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <MotionDiv key={index} variants={fadeInUp} whileHover={{ y: -10 }} className="text-center">
-                <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-[#e2dacd]/30 space-y-6">
+              <MotionDiv key={index} variants={fadeInUp} whileHover={{ y: -10 }} className="text-center h-full">
+                <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-[#e2dacd]/30 space-y-6 h-full flex flex-col">
                   <MotionDiv
                     className="w-20 h-20 bg-[#e0710d] rounded-2xl flex items-center justify-center text-white mx-auto"
                     whileHover={{
@@ -390,9 +390,9 @@ export default function LandingPage() {
                   >
                     {feature.icon}
                   </MotionDiv>
-                  <div className="space-y-3">
+                  <div className="space-y-3 flex-1 flex flex-col">
                     <h3 className="text-xl lg:text-2xl font-bold text-[#292927]">{feature.title}</h3>
-                    <p className="text-[#292927]/70 leading-relaxed">{feature.description}</p>
+                    <p className="text-[#292927]/70 leading-relaxed flex-1">{feature.description}</p>
                   </div>
                 </div>
               </MotionDiv>
@@ -423,39 +423,39 @@ export default function LandingPage() {
                 </MotionH2>
                 <div className="space-y-6">
                   <MotionP variants={fadeInUp} className="font-outfit text-lg lg:text-xl text-[#292927]/70 leading-relaxed">
-                    <strong className="text-[#e0710d] font-semibold">Cappomano</strong> nasce nel cuore di Milano con una missione chiara: rivoluzionare il settore
-                    dei servizi domestici attraverso l&apos;innovazione tecnologica e i pagamenti digitali.
+                    <strong className="text-[#e0710d] font-semibold">Bricollano</strong> è la piattaforma leader per servizi di riparazione e manutenzione casa a Milano.
+                    Operiamo in tutta la città, dai Navigli al Duomo, da Porta Romana a Brera.
                   </MotionP>
                   <MotionP variants={fadeInUp} className="font-outfit text-lg lg:text-xl text-[#292927]/70 leading-relaxed">
-                    Siamo la prima piattaforma italiana che unisce la tradizione dei servizi per la casa con le più moderne
-                    tecnologie di pagamento, incluse le criptovalute e sistemi di credito flessibili.
+                    I nostri elettricisti, idraulici e muratori qualificati garantiscono interventi professionali con tecnologie di pagamento innovative,
+                    incluse criptovalute e sistemi di credito flessibili per le famiglie milanesi.
                   </MotionP>
                 </div>
               </div>
 
               {/* Key Features Section */}
               <MotionDiv variants={fadeInUp} className="space-y-5">
-                <h3 className="font-playfair text-2xl font-bold text-[#292927] mb-6">I Nostri Punti di Forza</h3>
+                <h3 className="font-playfair text-2xl font-bold text-[#292927] mb-6">I Nostri Servizi a Milano</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-5 p-5 bg-[#e2dacd]/20 rounded-2xl border border-[#e2dacd]/30 hover:bg-[#e2dacd]/30 transition-colors">
                     <div className="w-4 h-4 bg-[#e0710d] rounded-full mt-1.5 flex-shrink-0"></div>
                     <div>
-                      <p className="font-outfit text-[#292927] font-semibold mb-2">Innovazione Tecnologica</p>
-                      <p className="text-[#292927]/70 leading-relaxed">Primi in Italia ad accettare Bitcoin ed Ethereum per servizi domestici</p>
+                      <p className="font-outfit text-[#292927] font-semibold mb-2">Elettricista Milano</p>
+                      <p className="text-[#292927]/70 leading-relaxed">Impianti elettrici, riparazioni urgenti e installazioni certificate in tutta Milano</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-5 p-5 bg-[#e2dacd]/20 rounded-2xl border border-[#e2dacd]/30 hover:bg-[#e2dacd]/30 transition-colors">
                     <div className="w-4 h-4 bg-[#9a1118] rounded-full mt-1.5 flex-shrink-0"></div>
                     <div>
-                      <p className="text-[#292927] font-semibold mb-2">Qualità Certificata</p>
-                      <p className="text-[#292927]/70 leading-relaxed">Professionisti verificati e formati secondo i nostri standard rigorosi</p>
+                      <p className="text-[#292927] font-semibold mb-2">Idraulico Milano</p>
+                      <p className="text-[#292927]/70 leading-relaxed">Riparazioni idrauliche, installazioni e manutenzione impianti in tutta la città</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-5 p-5 bg-[#e2dacd]/20 rounded-2xl border border-[#e2dacd]/30 hover:bg-[#e2dacd]/30 transition-colors">
                     <div className="w-4 h-4 bg-[#bb6a48] rounded-full mt-1.5 flex-shrink-0"></div>
                     <div>
-                      <p className="text-[#292927] font-semibold mb-2">Flessibilità di Pagamento</p>
-                      <p className="text-[#292927]/70 leading-relaxed">Sistema di credito integrato per pagamenti dilazionati e personalizzati</p>
+                      <p className="text-[#292927] font-semibold mb-2">Muratore Milano</p>
+                      <p className="text-[#292927]/70 leading-relaxed">Ristrutturazioni, riparazioni murarie e lavori di manutenzione edilizia</p>
                     </div>
                   </div>
                 </div>
@@ -468,8 +468,8 @@ export default function LandingPage() {
                 {/* Header */}
                 <div className="text-center mb-10">
                   <Hand className="w-24 h-24 text-[#e0710d] mx-auto mb-8" />
-                  <h3 className="text-2xl lg:text-3xl font-bold text-[#292927] mb-4">Cappomano Milano</h3>
-                  <p className="text-[#292927]/70 text-lg font-medium">Il futuro dei servizi domestici</p>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-[#292927] mb-4">Bricollano Milano</h3>
+                  <p className="text-[#292927]/70 text-lg font-medium">Servizi professionali di riparazione e manutenzione casa</p>
                 </div>
 
                 {/* Info Cards */}
@@ -614,24 +614,24 @@ export default function LandingPage() {
           <div className="text-center">
             <div className="space-y-8">
               <MotionH2 variants={fadeInUp} className="font-playfair text-4xl lg:text-5xl font-bold text-white leading-tight">
-                Pronto a Iniziare con Cappomano?
+                Hai bisogno di riparazioni a Milano?
               </MotionH2>
               <MotionP variants={fadeInUp} className="font-outfit text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl mx-auto">
-                Unisciti alla rivoluzione dei pagamenti crypto per i servizi domestici
+                Contatta i nostri professionisti per servizi di elettricista, idraulico e muratore a Milano
               </MotionP>
               <MotionDiv variants={fadeInUp} className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
                 <Button
                   size="lg"
                   className="bg-white text-[#e0710d] hover:bg-[#e2dacd] hover:scale-105 transition-all duration-300 px-8 py-6 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl"
                 >
-                  Registrati Gratis
+                  Richiedi Preventivo
                 </Button>
                 <Button 
                   size="lg" 
                   variant="outline" 
                   className="border-2 border-white text-white hover:bg-white hover:text-[#e0710d] hover:scale-105 transition-all duration-300 bg-transparent px-8 py-6 text-lg font-semibold rounded-2xl"
                 >
-                  Scopri di Più
+                  Chiamaci Ora
                 </Button>
               </MotionDiv>
             </div>
@@ -652,29 +652,41 @@ export default function LandingPage() {
               <div className="space-y-6">
                 <span className="inline-block w-16 h-2 rounded-full bg-[#e0710d]"></span>
                 <h2 className="text-4xl lg:text-5xl font-bold text-[#292927] leading-tight">
-                  Dove Operiamo: <span className="text-[#e0710d]">Milano</span>
+                  Dove Operiamo a <span className="text-[#e0710d]">Milano</span>
                 </h2>
                 <p className="text-xl lg:text-2xl text-[#292927]/70 leading-relaxed">
-                  <span className="font-semibold text-[#e0710d]">Siamo attivi principalmente a Milano e provincia.</span>
+                  <span className="font-semibold text-[#e0710d]">Bricollano opera in tutta Milano e provincia</span> con servizi di riparazione e manutenzione casa.
                 </p>
               </div>
               <div className="bg-[#e0710d]/10 border border-[#e0710d]/20 rounded-3xl p-8 space-y-4">
                 <p className="text-lg text-[#292927] leading-relaxed">
-                  Scopri la nostra area di copertura sulla mappa e 
-                  <span className="text-[#9a1118] font-semibold"> contattaci</span> per servizi personalizzati nella tua zona!
+                  I nostri professionisti intervengono in tutti i quartieri milanesi: 
+                  <span className="text-[#9a1118] font-semibold"> Navigli, Porta Romana, Duomo, Brera, Isola, Città Studi, Lambrate</span> e molto altro!
                 </p>
                 <div className="flex flex-wrap gap-3 pt-2">
                   <div className="flex items-center space-x-2 bg-white rounded-2xl px-4 py-2 shadow-sm">
                     <div className="w-3 h-3 bg-[#e0710d] rounded-full"></div>
-                    <span className="text-sm font-medium text-[#292927]">Centro Milano</span>
+                    <span className="text-sm font-medium text-[#292927]">Centro Storico</span>
                   </div>
                   <div className="flex items-center space-x-2 bg-white rounded-2xl px-4 py-2 shadow-sm">
                     <div className="w-3 h-3 bg-[#9a1118] rounded-full"></div>
-                    <span className="text-sm font-medium text-[#292927]">Provincia</span>
+                    <span className="text-sm font-medium text-[#292927]">Navigli</span>
                   </div>
                   <div className="flex items-center space-x-2 bg-white rounded-2xl px-4 py-2 shadow-sm">
                     <div className="w-3 h-3 bg-[#bb6a48] rounded-full"></div>
-                    <span className="text-sm font-medium text-[#292927]">Zone Limitrofe</span>
+                    <span className="text-sm font-medium text-[#292927]">Porta Romana</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-white rounded-2xl px-4 py-2 shadow-sm">
+                    <div className="w-3 h-3 bg-[#e0710d] rounded-full"></div>
+                    <span className="text-sm font-medium text-[#292927]">Brera</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-white rounded-2xl px-4 py-2 shadow-sm">
+                    <div className="w-3 h-3 bg-[#9a1118] rounded-full"></div>
+                    <span className="text-sm font-medium text-[#292927]">Isola</span>
+                  </div>
+                  <div className="flex items-center space-x-2 bg-white rounded-2xl px-4 py-2 shadow-sm">
+                    <div className="w-3 h-3 bg-[#bb6a48] rounded-full"></div>
+                    <span className="text-sm font-medium text-[#292927]">Città Studi</span>
                   </div>
                 </div>
               </div>
