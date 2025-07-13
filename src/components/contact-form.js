@@ -132,16 +132,16 @@ export default function ContactForm({ initialService = "" }) {
         const message = `
 *Nuova Richiesta da Bricollano*
 
-👤 *Informazioni Cliente:*
+ *Informazioni Cliente:*
 • Nome: ${formData.firstName} ${formData.lastName}
 • Email: ${formData.email}
 • Telefono: ${formData.phone || "Non fornito"}
 
-🔧 *Dettagli Servizio:*
+ *Dettagli Servizio:*
 • Tipo Cliente: Privato/Individuale
 • Servizio Richiesto: ${serviceText}
 
-💬 *Messaggio:*
+ *Messaggio:*
 ${formData.message || "Nessun messaggio aggiuntivo"}
 
 ---
