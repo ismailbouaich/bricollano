@@ -95,7 +95,8 @@ export default function ContactForm({ initialService = "" }) {
           services.find(s => s.toLowerCase().replace(/\s+/g, "-") === formData.service) || formData.service : 
           "Nessun servizio selezionato";
         
-        // Prepare template parameters
+        // Prepare template 
+        
         const templateParams = {
           from_name: `${formData.firstName} ${formData.lastName}`,
           from_email: formData.email,
