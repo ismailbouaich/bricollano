@@ -83,8 +83,12 @@ export default function ContactForm({ initialService = "" }) {
     e.preventDefault()
     setIsSubmitting(true)
     
+    console.log("Form submitted with data:", formData);
+    console.log("Customer type:", formData.customerType);
+    
     try {
       if (formData.customerType === "business") {
+        console.log("Processing business customer...");
         // For business/enterprise customers, send via email using EmailJS
         // Replace these with your actual EmailJS values
         const serviceId = "service_vgx4p3z";
@@ -106,6 +110,8 @@ export default function ContactForm({ initialService = "" }) {
           customer_type: "Business/Azienda",
         };
         
+        console.log("Sending email with params:", templateParams);
+        
         try {
           // Send email using EmailJS
           await emailjs.send(serviceId, templateId, templateParams, publicKey);
@@ -120,6 +126,7 @@ export default function ContactForm({ initialService = "" }) {
           throw new Error("Failed to send email. Please try again later.");
         }
       } else if (formData.customerType === "individual") {
+        console.log("Processing individual customer...");
         // For individual customers, redirect to WhatsApp
         const phoneNumber = "393123456789" // Replace with your actual WhatsApp number
         
@@ -153,11 +160,16 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
         // Create the WhatsApp URL
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
         
+        console.log("WhatsApp URL:", whatsappUrl);
+        
         // Open WhatsApp in a new tab
         window.open(whatsappUrl, "_blank")
         
         // Set submission type to whatsapp
         setSubmissionType("whatsapp")
+      } else {
+        console.log("No customer type selected or invalid customer type:", formData.customerType);
+        throw new Error("Please select a customer type");
       }
       
       // Set form as submitted
@@ -194,12 +206,16 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
             <DialogTitle className="text-2xl font-bold text-[#292927] mb-2">
               {submissionType === "email" 
                 ? "Email Inviata!" 
+                : submissionType === "whatsapp"
+                ? "WhatsApp Aperto!"
                 : "Richiesta Inviata!"}
             </DialogTitle>
             <p className="text-[#292927]/70 mb-4">
               {submissionType === "email"
                 ? "Abbiamo ricevuto la tua richiesta e ti risponderemo via email il prima possibile."
-                : "Sei stato reindirizzato a WhatsApp per completare l'invio del messaggio."}
+                : submissionType === "whatsapp"
+                ? "Sei stato reindirizzato a WhatsApp per completare l'invio del messaggio."
+                : "La tua richiesta è stata elaborata."}
             </p>
             <Button 
               onClick={() => setShowSuccessModal(false)}
