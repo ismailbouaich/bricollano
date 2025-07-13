@@ -5,6 +5,6 @@ export default function robots() {
       allow: '/',
       disallow: ['/private/', '/admin/', '/.git/'],
     },
-    sitemap: 'https://cappomano.it/sitemap.xml',
+    sitemap: 'https://bricollano.it/sitemap.xml',
   }
 }

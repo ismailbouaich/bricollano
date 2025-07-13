@@ -8,12 +8,12 @@ export const i18n = {
   localDetection: true,
   domains: [
     {
-      domain: 'cappomano.it',
+      domain: 'bricollano.it',
       defaultLocale: 'it',
     },
     // Add other domains for different locales if needed
     // {
-    //   domain: 'cappomano.com',
+    //   domain: 'bricollano.com',
     //   defaultLocale: 'en',    
     // },
   ],

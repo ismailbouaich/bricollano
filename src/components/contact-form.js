@@ -130,7 +130,7 @@ export default function ContactForm({ initialService = "" }) {
           "Nessun servizio selezionato"
           
         const message = `
-*Nuova Richiesta da Cappomano*
+*Nuova Richiesta da Bricollano*
 
 👤 *Informazioni Cliente:*
 • Nome: ${formData.firstName} ${formData.lastName}
@@ -145,7 +145,7 @@ export default function ContactForm({ initialService = "" }) {
 ${formData.message || "Nessun messaggio aggiuntivo"}
 
 ---
-*Inviato tramite form Cappomano*
+*Inviato tramite form bricollano*
         `.trim()
         
         // Encode the message for a URL
@@ -245,7 +245,7 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
                   </div>
                 </div>
                 <CardTitle className="text-4xl font-bold text-[#292927] mb-3 bg-gradient-to-r from-[#292927] to-[#e0710d] bg-clip-text text-transparent">
-                  Contatta Cappomano
+                  Contatta bricollano
                 </CardTitle>
                 <CardDescription className="text-lg text-[#292927]/70 max-w-md mx-auto leading-relaxed">
                   ✨ Richiedi un preventivo gratuito per i tuoi servizi a Milano

@@ -5,7 +5,7 @@ import Script from "next/script";
 
 /**
  * This component adds structured data and enhances SEO at the page level
- * for the Cappomano website.
+ * for the bricollano website.
  */
 export default function PageSEO() {
   // Add font preconnect for performance
@@ -30,10 +30,10 @@ export default function PageSEO() {
     "name": "Bricollano",
     "alternateName": "Bricollano Milano",
     "description": "Servizi professionali di riparazioni e manutenzione casa a Milano. Elettricista, idraulico, muratore qualificati con pagamenti innovativi.",
-    "image": "https://cappomano.it/logo.png",
-    "url": "https://cappomano.it",
+    "image": "https://bricollano.it/logo.png",
+    "url": "https://bricollano.it",
     "telephone": "+393123456789",
-    "email": "info@cappomano.it",
+    "email": "info@bricollano.it",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Via Milano, 1",
