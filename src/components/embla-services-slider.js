@@ -23,7 +23,7 @@ const services = [
     rating: 4.8,
     reviews: 156,
     icon: FaTools,
-    iconColor: '#e0710d',
+    iconColor: '#2563eb',
     duration: '1-3 ore',
     features: ['Impianti elettrici', 'Riparazioni urgenti', 'Installazioni', 'Certificazioni'],
     popular: true,
@@ -36,7 +36,7 @@ const services = [
     rating: 4.7,
     reviews: 124,
     icon: FaTools,
-    iconColor: '#bb6a48',
+    iconColor: '#1d4ed8',
     duration: '1-4 ore',
     features: ['Perdite d\'acqua', 'Installazioni', 'Manutenzione', 'Pronto intervento'],
     popular: true,
@@ -49,7 +49,7 @@ const services = [
     rating: 4.9,
     reviews: 342,
     icon: FaBroom,
-    iconColor: '#9a1118',
+    iconColor: '#1e40af',
     duration: '2-6 ore',
     features: ['Pulizia completa', 'Prodotti inclusi', 'Personale qualificato', 'Sanificazione'],
     popular: true,
@@ -62,7 +62,7 @@ const services = [
     rating: 4.6,
     reviews: 98,
     icon: FaTruck,
-    iconColor: '#e0710d',
+    iconColor: '#2563eb',
     duration: '3-8 ore',
     features: ['Imballaggio', 'Trasporto', 'Montaggio', 'Smontaggio'],
     popular: false,
@@ -218,7 +218,7 @@ export default function EmblaServicesSlider({ onBook = () => {} }) {
                 <div key={service.id} className="embla__slide">
                   <div className="embla__slide__content">
                     <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 mx-4 h-full">
-                      <div className="relative h-48 bg-gradient-to-br from-[#e2dacd]/30 to-[#e2dacd]/10 flex items-center justify-center">
+                      <div className="relative h-48 bg-gradient-to-br from-[#e2e8f0]/30 to-[#e2e8f0]/10 flex items-center justify-center">
                         <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/5"></div>
 
                         {/* Large Icon */}
@@ -237,13 +237,13 @@ export default function EmblaServicesSlider({ onBook = () => {} }) {
                         </div>
 
                         <div className="absolute bottom-4 right-4">
-                          <div className="bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-bold text-[#e0710d]">
+                          <div className="bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-bold text-[#2563eb]">
                             {service.price}
                           </div>
                         </div>
 
                         {service.popular && (
-                          <div className="absolute top-4 right-4 bg-[#e0710d] text-white px-2 py-1 rounded-full text-xs font-semibold">
+                          <div className="absolute top-4 right-4 bg-[#2563eb] text-white px-2 py-1 rounded-full text-xs font-semibold">
                             🔥 Popolare
                           </div>
                         )}
@@ -252,7 +252,7 @@ export default function EmblaServicesSlider({ onBook = () => {} }) {
                       <div className="p-6">
                         <div className="flex items-center justify-between mb-4">
                           <div className="flex items-center space-x-1">
-                            <Star className="w-4 h-4 text-[#e0710d] fill-current" />
+                            <Star className="w-4 h-4 text-[#2563eb] fill-current" />
                             <span className="text-sm font-medium text-[#292927]">{service.rating}</span>
                             <span className="text-xs text-[#292927]/70">({service.reviews} recensioni)</span>
                           </div>
@@ -267,7 +267,7 @@ export default function EmblaServicesSlider({ onBook = () => {} }) {
                         <div className="grid grid-cols-2 gap-2 mb-4">
                           {service.features.map((feature, featureIndex) => (
                             <div key={featureIndex} className="flex items-center space-x-2">
-                              <div className="w-2 h-2 bg-[#bb6a48] rounded-full"></div>
+                              <div className="w-2 h-2 bg-[#1d4ed8] rounded-full"></div>
                               <span className="text-xs text-[#292927]/70">{feature}</span>
                             </div>
                           ))}
@@ -275,7 +275,7 @@ export default function EmblaServicesSlider({ onBook = () => {} }) {
 
                         <Button 
                           onClick={() => onBook(service.title)}
-                          className="w-full bg-[#e0710d] hover:bg-[#bb6a48] text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 hover:scale-105"
+                          className="w-full bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 hover:scale-105"
                         >
                           Prenota Ora
                         </Button>
@@ -307,7 +307,7 @@ export default function EmblaServicesSlider({ onBook = () => {} }) {
                 onClick={() => scrollTo(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-200 ${
                   index === selectedIndex 
-                    ? 'bg-[#e0710d] scale-110' 
+                    ? 'bg-[#2563eb] scale-110' 
                     : 'bg-[#292927]/30 hover:bg-[#292927]/50'
                 }`}
               />

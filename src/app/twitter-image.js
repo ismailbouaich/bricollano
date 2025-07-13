@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
  
-export const alt = 'Cappomano - Servizi Domestici con Crypto';
+export const alt = 'Bricollano - Servizi Domestici con Crypto';
 export const size = {
   width: 1200,
   height: 630,
@@ -37,14 +37,14 @@ export default function Image() {
           <div style={{ 
             width: 50, 
             height: 50, 
-            backgroundColor: '#e0710d', 
+            backgroundColor: '#2563eb', 
             borderRadius: '12px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             marginRight: 20,
           }}>✋</div>
-          <div style={{ color: '#292927' }}>Cappomano</div>
+          <div style={{ color: '#292927' }}>Bricollano</div>
         </div>
         
         <div style={{ 
@@ -63,7 +63,7 @@ export default function Image() {
             lineHeight: 1.1,
           }}>
             Servizi Domestici con
-            <span style={{ color: '#e0710d', display: 'block' }}>Pagamenti Crypto</span>
+            <span style={{ color: '#2563eb', display: 'block' }}>Pagamenti Crypto</span>
           </h1>
           <p style={{ 
             fontSize: 28, 
@@ -81,7 +81,7 @@ export default function Image() {
           gap: 20,
         }}>
           <div style={{ 
-            background: '#e0710d', 
+            background: '#2563eb', 
             color: 'white',
             padding: '10px 20px',
             borderRadius: 12,
@@ -97,7 +97,7 @@ export default function Image() {
             fontSize: 24,
             border: '2px solid #292927',
           }}>
-            cappomano.it
+            Bricollano.it
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Hand } from "lucide-react";
+import Image from "next/image";
 import { usePageRefresh } from "@/hooks/use-page-refresh";
 
 export default function RefreshLoading() {
@@ -32,27 +32,33 @@ export default function RefreshLoading() {
   if (!isRefreshing) return null;
 
   return (
-    <div className="fixed inset-0 flex flex-col items-center justify-center z-50 bg-[#e2dacd]">
+    <div className="fixed inset-0 flex flex-col items-center justify-center z-50 bg-[#e2e8f0]">
       {/* Background Decoration */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-gradient-to-br from-[#e0710d]/20 to-transparent blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-gradient-to-tr from-[#bb6a48]/20 to-transparent blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-gradient-to-br from-[#2563eb]/20 to-transparent blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-gradient-to-tr from-[#1d4ed8]/20 to-transparent blur-3xl"></div>
         
         {/* Floating Particles */}
-        <div className="absolute top-[10%] left-[20%] w-6 h-6 bg-[#e0710d]/20 rounded-full animate-pulse"></div>
-        <div className="absolute top-[35%] left-[15%] w-10 h-10 bg-[#bb6a48]/15 rounded-full animate-bounce"></div>
+        <div className="absolute top-[10%] left-[20%] w-6 h-6 bg-[#2563eb]/20 rounded-full animate-pulse"></div>
+        <div className="absolute top-[35%] left-[15%] w-10 h-10 bg-[#1d4ed8]/15 rounded-full animate-bounce"></div>
         <div className="absolute top-[65%] left-[10%] w-8 h-8 bg-[#9a1118]/10 rounded-full animate-pulse"></div>
-        <div className="absolute top-[85%] left-[25%] w-11 h-11 bg-[#e0710d]/20 rounded-full animate-bounce"></div>
-        <div className="absolute top-[15%] right-[25%] w-9 h-9 bg-[#bb6a48]/15 rounded-full animate-pulse"></div>
+        <div className="absolute top-[85%] left-[25%] w-11 h-11 bg-[#2563eb]/20 rounded-full animate-bounce"></div>
+        <div className="absolute top-[15%] right-[25%] w-9 h-9 bg-[#1d4ed8]/15 rounded-full animate-pulse"></div>
         <div className="absolute top-[50%] right-[20%] w-7 h-7 bg-[#9a1118]/10 rounded-full animate-bounce"></div>
-        <div className="absolute top-[75%] right-[15%] w-10 h-10 bg-[#e0710d]/20 rounded-full animate-pulse"></div>
-        <div className="absolute top-[25%] right-[10%] w-8 h-8 bg-[#bb6a48]/15 rounded-full animate-bounce"></div>
+        <div className="absolute top-[75%] right-[15%] w-10 h-10 bg-[#2563eb]/20 rounded-full animate-pulse"></div>
+        <div className="absolute top-[25%] right-[10%] w-8 h-8 bg-[#1d4ed8]/15 rounded-full animate-bounce"></div>
       </div>
       
       {/* Logo */}
       <div className="relative z-10 mb-10">
-        <div className="w-24 h-24 bg-[#e0710d] rounded-2xl flex items-center justify-center text-white shadow-lg animate-bounce">
-          <Hand className="w-14 h-14" />
+        <div className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg animate-bounce p-2">
+          <Image 
+            src="/BRICOLLANO-plain-blue.png" 
+            alt="Bricollano Logo" 
+            width={56} 
+            height={56} 
+            className="w-14 h-14 object-contain"
+          />
         </div>
       </div>
       
@@ -67,9 +73,9 @@ export default function RefreshLoading() {
       </p>
       
       {/* Progress Bar */}
-      <div className="w-72 h-2 bg-[#e2dacd] rounded-full overflow-hidden border border-[#e0710d]/30 relative z-10 mb-3">
+      <div className="w-72 h-2 bg-[#e2e8f0] rounded-full overflow-hidden border border-[#2563eb]/30 relative z-10 mb-3">
         <div 
-          className="h-full bg-gradient-to-r from-[#e0710d] to-[#bb6a48] rounded-full transition-all duration-100 ease-out"
+          className="h-full bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] rounded-full transition-all duration-100 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -81,16 +87,16 @@ export default function RefreshLoading() {
       
       {/* Services Pills */}
       <div className="flex flex-wrap justify-center gap-2 max-w-md px-4 relative z-10">
-        <span className="px-3 py-1 bg-[#e0710d]/10 text-[#e0710d] rounded-full text-sm opacity-80 animate-pulse">
+        <span className="px-3 py-1 bg-[#2563eb]/10 text-[#2563eb] rounded-full text-sm opacity-80 animate-pulse">
           Elettricista Milano
         </span>
-        <span className="px-3 py-1 bg-[#bb6a48]/10 text-[#bb6a48] rounded-full text-sm opacity-80 animate-pulse delay-200">
+        <span className="px-3 py-1 bg-[#1d4ed8]/10 text-[#1d4ed8] rounded-full text-sm opacity-80 animate-pulse delay-200">
           Idraulico Milano
         </span>
         <span className="px-3 py-1 bg-[#9a1118]/10 text-[#9a1118] rounded-full text-sm opacity-80 animate-pulse delay-500">
           Muratore Milano
         </span>
-        <span className="px-3 py-1 bg-[#e0710d]/10 text-[#e0710d] rounded-full text-sm opacity-80 animate-pulse delay-700">
+        <span className="px-3 py-1 bg-[#2563eb]/10 text-[#2563eb] rounded-full text-sm opacity-80 animate-pulse delay-700">
           Pagamenti Crypto
         </span>
       </div>

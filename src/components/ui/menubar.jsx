@@ -19,9 +19,9 @@ function Menubar({
       )}
       {...props}>
       {/* Decorative circles */}
-      <div className="absolute top-1/2 -right-4 w-8 h-8 bg-[#9a1118] rounded-full opacity-15"></div>
-      <div className="absolute top-1/2 -left-4 w-6 h-6 bg-[#e0710d] rounded-full opacity-10"></div>
-      <div className="absolute -top-2 right-8 w-4 h-4 bg-[#bb6a48] rounded-full opacity-20"></div>
+      <div className="absolute top-1/2 -right-4 w-8 h-8 bg-[#1e40af] rounded-full opacity-15"></div>
+      <div className="absolute top-1/2 -left-4 w-6 h-6 bg-[#2563eb] rounded-full opacity-10"></div>
+      <div className="absolute -top-2 right-8 w-4 h-4 bg-[#1d4ed8] rounded-full opacity-20"></div>
       {props.children}
     </MenubarPrimitive.Root>)
   );

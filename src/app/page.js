@@ -2,7 +2,8 @@
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Bitcoin, CreditCard, Shield, Zap, Menu, Hand, MessageCircle } from "lucide-react"
+import { Bitcoin, CreditCard, Shield, Zap, Menu, MessageCircle } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import ContactForm from "@/components/contact-form"
@@ -88,7 +89,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#e2dacd] overflow-x-hidden">
+    <div className="min-h-screen bg-[#e2e8f0] overflow-x-hidden">
       {/* Add SEO enhancements */}
       <PageSEO />
       <MetaTags />
@@ -98,7 +99,7 @@ export default function LandingPage() {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="bg-white/90 backdrop-blur-md border-b border-[#bb6a48]/20 sticky top-0 z-40"
+        className="bg-white/90 backdrop-blur-md border-b border-[#1d4ed8]/20 sticky top-0 z-40"
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -108,8 +109,13 @@ export default function LandingPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex items-center space-x-2"
             >
-              <Hand className="w-8 h-8 text-[#e0710d]" />
-              <span className="text-2xl font-bold text-[#292927] font-playfair brand-name">Bricollano</span>
+              <Image 
+                src="/BRICOLLANO-plain-blue.png" 
+                alt="Bricollano Logo" 
+                width={56} 
+                height={56} 
+                className="w-14 h-14 object-contain"
+              />
             </MotionDiv>
 
             {/* Desktop Navigation */}
@@ -143,16 +149,21 @@ export default function LandingPage() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <SheetHeader>
-                  <SheetTitle className="flex items-center space-x-2">
-                    <Hand className="w-6 h-6 text-[#e0710d]" />
-                    <span className="font-playfair">Bricollano</span>
+                  <SheetTitle className="flex items-center justify-center">
+                    <Image 
+                      src="/BRICOLLANO-plain-blue.png" 
+                      alt="Bricollano Logo" 
+                      width={32} 
+                      height={32} 
+                      className="w-8 h-8 object-contain"
+                    />
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col space-y-6 mt-12 px-4 overflow-y-auto max-h-[calc(100vh-120px)] pb-6">
                   <SheetClose asChild>
                     <Link
                       href="#services"
-                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#e0710d] py-4 px-6 rounded-2xl hover:bg-[#e2dacd]/20 transition-all duration-300 border border-transparent hover:border-[#e0710d]/20"
+                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#2563eb] py-4 px-6 rounded-2xl hover:bg-[#e2e8f0]/20 transition-all duration-300 border border-transparent hover:border-[#2563eb]/20"
                     >
                       Servizi
                     </Link>
@@ -160,7 +171,7 @@ export default function LandingPage() {
                   <SheetClose asChild>
                     <Link
                       href="#features"
-                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#e0710d] py-4 px-6 rounded-2xl hover:bg-[#e2dacd]/20 transition-all duration-300 border border-transparent hover:border-[#e0710d]/20"
+                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#2563eb] py-4 px-6 rounded-2xl hover:bg-[#e2e8f0]/20 transition-all duration-300 border border-transparent hover:border-[#2563eb]/20"
                     >
                       Caratteristiche
                     </Link>
@@ -168,7 +179,7 @@ export default function LandingPage() {
                   <SheetClose asChild>
                     <Link
                       href="#about"
-                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#e0710d] py-4 px-6 rounded-2xl hover:bg-[#e2dacd]/20 transition-all duration-300 border border-transparent hover:border-[#e0710d]/20"
+                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#2563eb] py-4 px-6 rounded-2xl hover:bg-[#e2e8f0]/20 transition-all duration-300 border border-transparent hover:border-[#2563eb]/20"
                     >
                       Chi Siamo
                     </Link>
@@ -176,7 +187,7 @@ export default function LandingPage() {
                   <SheetClose asChild>
                     <Link
                       href="#contact-form"
-                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#e0710d] py-4 px-6 rounded-2xl hover:bg-[#e2dacd]/20 transition-all duration-300 border border-transparent hover:border-[#e0710d]/20"
+                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#2563eb] py-4 px-6 rounded-2xl hover:bg-[#e2e8f0]/20 transition-all duration-300 border border-transparent hover:border-[#2563eb]/20"
                     >
                       Contatti
                     </Link>
@@ -186,7 +197,7 @@ export default function LandingPage() {
                     <SheetClose asChild>
                       <Button
                         variant="outline"
-                        className="w-full bg-transparent hover:scale-105 transition-transform border-[#e0710d]/30 hover:border-[#e0710d] py-6 text-lg font-semibold rounded-2xl"
+                        className="w-full bg-transparent hover:scale-105 transition-transform border-[#2563eb]/30 hover:border-[#2563eb] py-6 text-lg font-semibold rounded-2xl"
                         asChild
                       >
                         <a
@@ -217,7 +228,7 @@ export default function LandingPage() {
       >
         {/* Animated Background */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-[#e2dacd]"></div>
+          <div className="absolute inset-0 bg-[#e2e8f0]"></div>
           
           {/* Animated Elements - Client-side only to prevent hydration mismatch */}
           {isMounted && (
@@ -229,18 +240,18 @@ export default function LandingPage() {
             >
               {/* Floating particles - Use pre-defined values instead of random to avoid hydration issues */}
               {[
-                { size: 25, top: '10%', left: '20%', yOffset: -80, xOffset: 30, duration: 18, color: 'bg-[#e0710d]/20' },
-                { size: 40, top: '35%', left: '15%', yOffset: -120, xOffset: -40, duration: 22, color: 'bg-[#bb6a48]/15' },
-                { size: 30, top: '65%', left: '10%', yOffset: -70, xOffset: 15, duration: 19, color: 'bg-[#9a1118]/10' },
-                { size: 45, top: '85%', left: '25%', yOffset: -100, xOffset: -20, duration: 21, color: 'bg-[#e0710d]/20' },
-                { size: 35, top: '15%', left: '45%', yOffset: -90, xOffset: 25, duration: 20, color: 'bg-[#bb6a48]/15' },
-                { size: 28, top: '50%', left: '40%', yOffset: -110, xOffset: -35, duration: 23, color: 'bg-[#9a1118]/10' },
-                { size: 42, top: '75%', left: '55%', yOffset: -75, xOffset: 40, duration: 17, color: 'bg-[#e0710d]/20' },
-                { size: 32, top: '25%', left: '70%', yOffset: -95, xOffset: -25, duration: 19, color: 'bg-[#bb6a48]/15' },
-                { size: 38, top: '60%', left: '75%', yOffset: -85, xOffset: 30, duration: 20, color: 'bg-[#9a1118]/10' },
-                { size: 36, top: '40%', left: '90%', yOffset: -105, xOffset: -20, duration: 18, color: 'bg-[#e0710d]/20' },
-                { size: 26, top: '80%', left: '85%', yOffset: -65, xOffset: 10, duration: 21, color: 'bg-[#bb6a48]/15' },
-                { size: 34, top: '5%', left: '60%', yOffset: -115, xOffset: -30, duration: 22, color: 'bg-[#9a1118]/10' },
+                { size: 25, top: '10%', left: '20%', yOffset: -80, xOffset: 30, duration: 18, color: 'bg-[#2563eb]/20' },
+                { size: 40, top: '35%', left: '15%', yOffset: -120, xOffset: -40, duration: 22, color: 'bg-[#1d4ed8]/15' },
+                { size: 30, top: '65%', left: '10%', yOffset: -70, xOffset: 15, duration: 19, color: 'bg-[#1e40af]/10' },
+                { size: 45, top: '85%', left: '25%', yOffset: -100, xOffset: -20, duration: 21, color: 'bg-[#2563eb]/20' },
+                { size: 35, top: '15%', left: '45%', yOffset: -90, xOffset: 25, duration: 20, color: 'bg-[#1d4ed8]/15' },
+                { size: 28, top: '50%', left: '40%', yOffset: -110, xOffset: -35, duration: 23, color: 'bg-[#1e40af]/10' },
+                { size: 42, top: '75%', left: '55%', yOffset: -75, xOffset: 40, duration: 17, color: 'bg-[#2563eb]/20' },
+                { size: 32, top: '25%', left: '70%', yOffset: -95, xOffset: -25, duration: 19, color: 'bg-[#1d4ed8]/15' },
+                { size: 38, top: '60%', left: '75%', yOffset: -85, xOffset: 30, duration: 20, color: 'bg-[#1e40af]/10' },
+                { size: 36, top: '40%', left: '90%', yOffset: -105, xOffset: -20, duration: 18, color: 'bg-[#2563eb]/20' },
+                { size: 26, top: '80%', left: '85%', yOffset: -65, xOffset: 10, duration: 21, color: 'bg-[#1d4ed8]/15' },
+                { size: 34, top: '5%', left: '60%', yOffset: -115, xOffset: -30, duration: 22, color: 'bg-[#1e40af]/10' },
               ].map((particle, i) => (
                 <motion.div
                   key={i}
@@ -266,7 +277,7 @@ export default function LandingPage() {
               
               {/* Gradient Orbs */}
               <motion.div 
-                className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-gradient-to-br from-[#e0710d]/20 to-transparent blur-3xl"
+                className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-gradient-to-br from-[#2563eb]/20 to-transparent blur-3xl"
                 animate={{ 
                   scale: [1, 1.2, 1],
                   opacity: [0.3, 0.5, 0.3],
@@ -278,7 +289,7 @@ export default function LandingPage() {
                 }}
               />
               <motion.div 
-                className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-gradient-to-tr from-[#bb6a48]/20 to-transparent blur-3xl"
+                className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-gradient-to-tr from-[#1d4ed8]/20 to-transparent blur-3xl"
                 animate={{ 
                   scale: [1, 1.1, 1],
                   opacity: [0.2, 0.4, 0.2],
@@ -297,7 +308,7 @@ export default function LandingPage() {
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center space-y-12">
             <MotionDiv variants={bounceIn} className="flex justify-center">
-              <Badge className="mb-6 bg-[#e0710d]/10 text-[#e0710d] border-[#e0710d]/20 hover:bg-[#e0710d]/20 px-6 py-3 text-lg font-semibold rounded-2xl">
+              <Badge className="mb-6 bg-[#2563eb]/10 text-[#2563eb] border-[#2563eb]/20 hover:bg-[#2563eb]/20 px-6 py-3 text-lg font-semibold rounded-2xl">
                 🚀 Pagamenti Crypto Accettati
               </Badge>
             </MotionDiv>
@@ -305,7 +316,7 @@ export default function LandingPage() {
             <div className="space-y-8">
               <MotionH1 variants={fadeInUp} className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-[#292927] leading-tight">
                 Riparazioni e Manutenzione
-                <span className="text-[#e0710d] block mt-2">
+                <span className="text-[#2563eb] block mt-2">
                   Casa a Milano
                 </span>
               </MotionH1>
@@ -318,7 +329,7 @@ export default function LandingPage() {
             <MotionDiv variants={fadeInUp} className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
               <Button
                 size="lg"
-                className="bg-[#e0710d] text-white hover:bg-[#bb6a48] hover:scale-105 transition-all duration-300 px-8 py-6 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl"
+                className="bg-[#2563eb] text-white hover:bg-[#1d4ed8] hover:scale-105 transition-all duration-300 px-8 py-6 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl"
               >
                 <Bitcoin className="w-6 h-6 mr-3" />
                 Richiedi Preventivo
@@ -365,7 +376,7 @@ export default function LandingPage() {
       {/* Features Section */}
       <MotionSection
         id="features"
-        className="py-32 px-4 bg-[#e2dacd]/20"
+        className="py-32 px-4 bg-[#e2e8f0]/20"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -385,9 +396,9 @@ export default function LandingPage() {
           <MotionDiv variants={staggerContainer} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <MotionDiv key={index} variants={fadeInUp} whileHover={{ y: -10 }} className="text-center h-full">
-                <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-[#e2dacd]/30 space-y-6 h-full flex flex-col">
+                <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-[#e2e8f0]/30 space-y-6 h-full flex flex-col">
                   <MotionDiv
-                    className="w-20 h-20 bg-[#e0710d] rounded-2xl flex items-center justify-center text-white mx-auto"
+                    className="w-20 h-20 bg-[#2563eb] rounded-2xl flex items-center justify-center text-white mx-auto"
                     whileHover={{
                       scale: 1.1,
                       rotate: 360,
@@ -429,7 +440,7 @@ export default function LandingPage() {
                 </MotionH2>
                 <div className="space-y-6">
                   <MotionP variants={fadeInUp} className="font-outfit text-lg lg:text-xl text-[#292927]/70 leading-relaxed">
-                    <strong className="text-[#e0710d] font-semibold">Bricollano</strong> è la piattaforma leader per servizi di riparazione e manutenzione casa a Milano.
+                    <strong className="text-[#2563eb] font-semibold">Bricollano</strong> è la piattaforma leader per servizi di riparazione e manutenzione casa a Milano.
                     Operiamo in tutta la città, dai Navigli al Duomo, da Porta Romana a Brera.
                   </MotionP>
                   <MotionP variants={fadeInUp} className="font-outfit text-lg lg:text-xl text-[#292927]/70 leading-relaxed">
@@ -443,22 +454,22 @@ export default function LandingPage() {
               <MotionDiv variants={fadeInUp} className="space-y-5">
                 <h3 className="font-playfair text-2xl font-bold text-[#292927] mb-6">I Nostri Servizi a Milano</h3>
                 <div className="space-y-4">
-                  <div className="flex items-start space-x-5 p-5 bg-[#e2dacd]/20 rounded-2xl border border-[#e2dacd]/30 hover:bg-[#e2dacd]/30 transition-colors">
-                    <div className="w-4 h-4 bg-[#e0710d] rounded-full mt-1.5 flex-shrink-0"></div>
+                  <div className="flex items-start space-x-5 p-5 bg-[#e2e8f0]/20 rounded-2xl border border-[#e2e8f0]/30 hover:bg-[#e2e8f0]/30 transition-colors">
+                    <div className="w-4 h-4 bg-[#2563eb] rounded-full mt-1.5 flex-shrink-0"></div>
                     <div>
                       <p className="font-outfit text-[#292927] font-semibold mb-2">Elettricista Milano</p>
                       <p className="text-[#292927]/70 leading-relaxed">Impianti elettrici, riparazioni urgenti e installazioni certificate in tutta Milano</p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-5 p-5 bg-[#e2dacd]/20 rounded-2xl border border-[#e2dacd]/30 hover:bg-[#e2dacd]/30 transition-colors">
-                    <div className="w-4 h-4 bg-[#9a1118] rounded-full mt-1.5 flex-shrink-0"></div>
+                  <div className="flex items-start space-x-5 p-5 bg-[#e2e8f0]/20 rounded-2xl border border-[#e2e8f0]/30 hover:bg-[#e2e8f0]/30 transition-colors">
+                    <div className="w-4 h-4 bg-[#1e40af] rounded-full mt-1.5 flex-shrink-0"></div>
                     <div>
                       <p className="text-[#292927] font-semibold mb-2">Idraulico Milano</p>
                       <p className="text-[#292927]/70 leading-relaxed">Riparazioni idrauliche, installazioni e manutenzione impianti in tutta la città</p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-5 p-5 bg-[#e2dacd]/20 rounded-2xl border border-[#e2dacd]/30 hover:bg-[#e2dacd]/30 transition-colors">
-                    <div className="w-4 h-4 bg-[#bb6a48] rounded-full mt-1.5 flex-shrink-0"></div>
+                  <div className="flex items-start space-x-5 p-5 bg-[#e2e8f0]/20 rounded-2xl border border-[#e2e8f0]/30 hover:bg-[#e2e8f0]/30 transition-colors">
+                    <div className="w-4 h-4 bg-[#1d4ed8] rounded-full mt-1.5 flex-shrink-0"></div>
                     <div>
                       <p className="text-[#292927] font-semibold mb-2">Muratore Milano</p>
                       <p className="text-[#292927]/70 leading-relaxed">Ristrutturazioni, riparazioni murarie e lavori di manutenzione edilizia</p>
@@ -470,19 +481,25 @@ export default function LandingPage() {
 
             {/* Right Column - Visual Card */}
             <MotionDiv variants={fadeInRight} className="relative lg:pl-8">
-              <div className="bg-[#e2dacd]/40 rounded-3xl p-10 lg:p-12 shadow-lg border border-[#e2dacd]/50">
+              <div className="bg-[#e2e8f0]/40 rounded-3xl p-10 lg:p-12 shadow-lg border border-[#e2e8f0]/50">
                 {/* Header */}
                 <div className="text-center mb-10">
-                  <Hand className="w-24 h-24 text-[#e0710d] mx-auto mb-8" />
+                  <Image 
+                    src="/BRICOLLANO-logo-blue.png" 
+                    alt="Bricollano Logo" 
+                    width={96} 
+                    height={96} 
+                    className="w-24 h-24 mx-auto mb-8 object-contain"
+                  />
                   <h3 className="text-2xl lg:text-3xl font-bold text-[#292927] mb-4">Bricollano Milano</h3>
                   <p className="text-[#292927]/70 text-lg font-medium">Servizi professionali di riparazione e manutenzione casa</p>
                 </div>
 
                 {/* Info Cards */}
                 <div className="space-y-4">
-                  <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-[#e2dacd]/30">
+                  <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-[#e2e8f0]/30">
                     <div className="flex items-center space-x-5">
-                      <div className="w-5 h-5 bg-[#9a1118] rounded-full flex-shrink-0"></div>
+                      <div className="w-5 h-5 bg-[#1e40af] rounded-full flex-shrink-0"></div>
                       <div>
                         <p className="font-semibold text-[#292927] mb-1 text-lg">Sede Principale</p>
                         <p className="text-[#292927]/70">Milano, Lombardia</p>
@@ -490,9 +507,9 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-[#e2dacd]/30">
+                  <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-[#e2e8f0]/30">
                     <div className="flex items-center space-x-5">
-                      <div className="w-5 h-5 bg-[#bb6a48] rounded-full flex-shrink-0"></div>
+                      <div className="w-5 h-5 bg-[#1d4ed8] rounded-full flex-shrink-0"></div>
                       <div>
                         <p className="font-semibold text-[#292927] mb-1 text-lg">Servizi Attivi</p>
                         <p className="text-[#292927]/70">Milano e Provincia</p>
@@ -500,9 +517,9 @@ export default function LandingPage() {
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-[#e2dacd]/30">
+                  <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-[#e2e8f0]/30">
                     <div className="flex items-center space-x-5">
-                      <div className="w-5 h-5 bg-[#e0710d] rounded-full flex-shrink-0"></div>
+                      <div className="w-5 h-5 bg-[#2563eb] rounded-full flex-shrink-0"></div>
                       <div>
                         <p className="font-semibold text-[#292927] mb-1 text-lg">Espansione</p>
                         <p className="text-[#292927]/70">Presto in tutta Italia</p>
@@ -513,9 +530,9 @@ export default function LandingPage() {
               </div>
 
               {/* Enhanced Decorative Elements */}
-              <div className="absolute -top-8 -right-8 w-16 h-16 bg-[#e0710d] rounded-full opacity-20"></div>
-              <div className="absolute -bottom-8 -left-8 w-20 h-20 bg-[#bb6a48] rounded-full opacity-20"></div>
-              <div className="absolute top-1/2 -right-4 w-8 h-8 bg-[#9a1118] rounded-full opacity-15"></div>
+              <div className="absolute -top-8 -right-8 w-16 h-16 bg-[#2563eb] rounded-full opacity-20"></div>
+              <div className="absolute -bottom-8 -left-8 w-20 h-20 bg-[#1d4ed8] rounded-full opacity-20"></div>
+              <div className="absolute top-1/2 -right-4 w-8 h-8 bg-[#1e40af] rounded-full opacity-15"></div>
             </MotionDiv>
           </div>
         </div>
@@ -523,7 +540,7 @@ export default function LandingPage() {
 
       {/* Stats Section */}
       <MotionSection
-        className="py-32 px-4 bg-[#e0710d]"
+        className="py-32 px-4 bg-[#2563eb]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -597,15 +614,15 @@ export default function LandingPage() {
 
       {/* CTA Section */}
       <MotionSection
-        className="py-32 px-4 bg-[#e0710d] relative overflow-hidden"
+        className="py-32 px-4 bg-[#2563eb] relative overflow-hidden"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
       >
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-[#e0710d]">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#e0710d] via-[#e0710d] to-[#bb6a48] opacity-90"></div>
+        <div className="absolute inset-0 bg-[#2563eb]">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#2563eb] via-[#2563eb] to-[#1d4ed8] opacity-90"></div>
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#292927]/20 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-30">
@@ -628,14 +645,14 @@ export default function LandingPage() {
               <MotionDiv variants={fadeInUp} className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
                 <Button
                   size="lg"
-                  className="bg-white text-[#e0710d] hover:bg-[#e2dacd] hover:scale-105 transition-all duration-300 px-8 py-6 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl"
+                  className="bg-white text-[#2563eb] hover:bg-[#e2e8f0] hover:scale-105 transition-all duration-300 px-8 py-6 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl"
                 >
                   Richiedi Preventivo
                 </Button>
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-2 border-white text-white hover:bg-white hover:text-[#e0710d] hover:scale-105 transition-all duration-300 bg-transparent px-8 py-6 text-lg font-semibold rounded-2xl"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#2563eb] hover:scale-105 transition-all duration-300 bg-transparent px-8 py-6 text-lg font-semibold rounded-2xl"
                 >
                   Chiamaci Ora
                 </Button>
@@ -656,42 +673,42 @@ export default function LandingPage() {
             {/* Left: Text */}
             <div className="space-y-8">
               <div className="space-y-6">
-                <span className="inline-block w-16 h-2 rounded-full bg-[#e0710d]"></span>
+                <span className="inline-block w-16 h-2 rounded-full bg-[#2563eb]"></span>
                 <h2 className="text-4xl lg:text-5xl font-bold text-[#292927] leading-tight">
-                  Dove Operiamo a <span className="text-[#e0710d]">Milano</span>
+                  Dove Operiamo a <span className="text-[#2563eb]">Milano</span>
                 </h2>
                 <p className="text-xl lg:text-2xl text-[#292927]/70 leading-relaxed">
-                  <span className="font-semibold text-[#e0710d]">Bricollano opera in tutta Milano e provincia</span> con servizi di riparazione e manutenzione casa.
+                  <span className="font-semibold text-[#2563eb]">Bricollano opera in tutta Milano e provincia</span> con servizi di riparazione e manutenzione casa.
                 </p>
               </div>
-              <div className="bg-[#e0710d]/10 border border-[#e0710d]/20 rounded-3xl p-8 space-y-4">
+              <div className="bg-[#2563eb]/10 border border-[#2563eb]/20 rounded-3xl p-8 space-y-4">
                 <p className="text-lg text-[#292927] leading-relaxed">
                   I nostri professionisti intervengono in tutti i quartieri milanesi: 
-                  <span className="text-[#9a1118] font-semibold"> Navigli, Porta Romana, Duomo, Brera, Isola, Città Studi, Lambrate</span> e molto altro!
+                  <span className="text-[#1e40af] font-semibold"> Navigli, Porta Romana, Duomo, Brera, Isola, Città Studi, Lambrate</span> e molto altro!
                 </p>
                 <div className="flex flex-wrap gap-3 pt-2">
                   <div className="flex items-center space-x-2 bg-white rounded-2xl px-4 py-2 shadow-sm">
-                    <div className="w-3 h-3 bg-[#e0710d] rounded-full"></div>
+                    <div className="w-3 h-3 bg-[#2563eb] rounded-full"></div>
                     <span className="text-sm font-medium text-[#292927]">Centro Storico</span>
                   </div>
                   <div className="flex items-center space-x-2 bg-white rounded-2xl px-4 py-2 shadow-sm">
-                    <div className="w-3 h-3 bg-[#9a1118] rounded-full"></div>
+                    <div className="w-3 h-3 bg-[#1e40af] rounded-full"></div>
                     <span className="text-sm font-medium text-[#292927]">Navigli</span>
                   </div>
                   <div className="flex items-center space-x-2 bg-white rounded-2xl px-4 py-2 shadow-sm">
-                    <div className="w-3 h-3 bg-[#bb6a48] rounded-full"></div>
+                    <div className="w-3 h-3 bg-[#1d4ed8] rounded-full"></div>
                     <span className="text-sm font-medium text-[#292927]">Porta Romana</span>
                   </div>
                   <div className="flex items-center space-x-2 bg-white rounded-2xl px-4 py-2 shadow-sm">
-                    <div className="w-3 h-3 bg-[#e0710d] rounded-full"></div>
+                    <div className="w-3 h-3 bg-[#2563eb] rounded-full"></div>
                     <span className="text-sm font-medium text-[#292927]">Brera</span>
                   </div>
                   <div className="flex items-center space-x-2 bg-white rounded-2xl px-4 py-2 shadow-sm">
-                    <div className="w-3 h-3 bg-[#9a1118] rounded-full"></div>
+                    <div className="w-3 h-3 bg-[#1e40af] rounded-full"></div>
                     <span className="text-sm font-medium text-[#292927]">Isola</span>
                   </div>
                   <div className="flex items-center space-x-2 bg-white rounded-2xl px-4 py-2 shadow-sm">
-                    <div className="w-3 h-3 bg-[#bb6a48] rounded-full"></div>
+                    <div className="w-3 h-3 bg-[#1d4ed8] rounded-full"></div>
                     <span className="text-sm font-medium text-[#292927]">Città Studi</span>
                   </div>
                 </div>
@@ -700,8 +717,8 @@ export default function LandingPage() {
             
             {/* Right: Map */}
             <div className="relative">
-              <div className="bg-[#e2dacd]/20 rounded-3xl p-6 border border-[#e2dacd]/30">
-                <div className="h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-lg border border-[#e2dacd]/50">
+              <div className="bg-[#e2e8f0]/20 rounded-3xl p-6 border border-[#e2e8f0]/30">
+                <div className="h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-lg border border-[#e2e8f0]/50">
                   <iframe
                     title="Mappa Milano"
                     src="https://www.google.com/maps?q=Milano,+Italia&output=embed"
@@ -716,8 +733,8 @@ export default function LandingPage() {
               </div>
               
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#e0710d] rounded-full opacity-20"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#bb6a48] rounded-full opacity-20"></div>
+              <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#2563eb] rounded-full opacity-20"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#1d4ed8] rounded-full opacity-20"></div>
             </div>
           </div>
         </div>      </MotionSection>

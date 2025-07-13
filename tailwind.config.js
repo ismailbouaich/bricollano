@@ -28,19 +28,19 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#e0710d", // Cappomano primary orange
+          DEFAULT: "#2563eb", // Bricollano primary blue
           foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#bb6a48", // Cappomano secondary color
+          DEFAULT: "#1d4ed8", // Bricollano secondary blue
           foreground: "#ffffff",
         },
         accent: {
-          DEFAULT: "#9a1118", // Cappomano accent color
+          DEFAULT: "#1e40af", // Bricollano accent blue
           foreground: "#ffffff",
         },
         neutral: {
-          DEFAULT: "#e2dacd", // Cappomano background color
+          DEFAULT: "#e2e8f0", // Bricollano background color
           foreground: "#292927",
         },
         destructive: {

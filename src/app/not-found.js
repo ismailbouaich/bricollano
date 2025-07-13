@@ -2,27 +2,33 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Hand } from "lucide-react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-[#e2dacd] flex flex-col items-center justify-center p-5 text-center">
+    <div className="min-h-screen bg-[#e2e8f0] flex flex-col items-center justify-center p-5 text-center">
       <motion.div 
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="flex items-center mb-8"
       >
-        <Hand className="w-12 h-12 text-[#e0710d] mr-3" />
-        <span className="text-4xl font-bold text-[#292927]">Cappomano</span>
+        <Image 
+          src="/BRICOLLANO-plain-blue.png" 
+          alt="Bricollano Logo" 
+          width={48} 
+          height={48} 
+          className="w-12 h-12 mr-3 object-contain"
+        />
+        <span className="text-4xl font-bold text-[#292927]">Bricollano</span>
       </motion.div>
       
       <motion.h1 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-6xl md:text-7xl font-bold text-[#e0710d] mb-6"
+        className="text-6xl md:text-7xl font-bold text-[#2563eb] mb-6"
       >
         404
       </motion.h1>
@@ -49,7 +55,7 @@ export default function NotFound() {
         <Link href="/">
           <Button 
             size="lg" 
-            className="bg-[#e0710d] text-white hover:bg-[#bb6a48] hover:scale-105 transition-all duration-300 px-8 py-6 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl"
+            className="bg-[#2563eb] text-white hover:bg-[#1d4ed8] hover:scale-105 transition-all duration-300 px-8 py-6 text-lg font-semibold rounded-2xl shadow-lg hover:shadow-xl"
           >
             Torna alla Home
           </Button>
@@ -62,7 +68,7 @@ export default function NotFound() {
         transition={{ duration: 0.5, delay: 0.6 }}
         className="mt-16 text-sm text-[#292927]/50"
       >
-        &copy; {new Date().getFullYear()} Cappomano. Tutti i diritti riservati.
+        &copy; {new Date().getFullYear()} Bricollano. Tutti i diritti riservati.
       </motion.div>
     </div>
   );
