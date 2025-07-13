@@ -138,7 +138,7 @@ export default function Footer() {
       >
         <Button size="lg" className="rounded-full w-16 h-16 bg-[#bb6a48] hover:bg-[#e0710d] shadow-lg" asChild>
           <a
-            href="https://wa.me/393312904133"
+            href="https://wa.me/393312904233"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Contattaci su WhatsApp"
