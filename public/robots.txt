@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cappomano.it/sitemap.xml
+
+# Disallow admin or private pages (add as needed)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl delay (optional)
+Crawl-delay: 1

@@ -14,10 +14,16 @@ function Menubar({
     (<MenubarPrimitive.Root
       data-slot="menubar"
       className={cn(
-        "bg-background flex h-9 items-center gap-1 rounded-md border p-1 shadow-xs",
+        "bg-background flex h-9 items-center gap-1 rounded-md border p-1 shadow-xs relative",
         className
       )}
-      {...props} />)
+      {...props}>
+      {/* Decorative circles */}
+      <div className="absolute top-1/2 -right-4 w-8 h-8 bg-[#9a1118] rounded-full opacity-15"></div>
+      <div className="absolute top-1/2 -left-4 w-6 h-6 bg-[#e0710d] rounded-full opacity-10"></div>
+      <div className="absolute -top-2 right-8 w-4 h-4 bg-[#bb6a48] rounded-full opacity-20"></div>
+      {props.children}
+    </MenubarPrimitive.Root>)
   );
 }
 

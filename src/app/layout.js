@@ -1,5 +1,7 @@
 import { Playfair_Display, Outfit } from "next/font/google";
 import "./globals.css";
+import HydrationHandler from "@/components/hydration-handler";
+import RefreshLoading from "@/components/refresh-loading";
 
 // Primary heading font - elegant, luxury feel
 const playfairDisplay = Playfair_Display({
@@ -18,12 +20,26 @@ const outfit = Outfit({
 });
 
 export const metadata = {
-  title: "Cappomano | Servizi per la Casa con Pagamenti Crypto",
-  description: "Cappomano è la prima piattaforma italiana che unisce servizi domestici professionali con pagamenti in criptovalute e sistema di credito integrato.",
-  keywords: ["servizi domestici", "pagamenti crypto", "Milano", "servizi casa", "bitcoin", "ethereum", "professionisti casa", "credito flessibile"],
-  authors: [{ name: "Cappomano" }],
-  creator: "Cappomano",
-  publisher: "Cappomano",
+  metadataBase: new URL('https://cappomano.it'),
+  title: "Bricollano Milano | Riparazioni e Manutenzione Casa Milano",
+  description: "Servizi professionali di riparazioni e manutenzione casa a Milano. Elettricista, idraulico, muratore qualificati. Pagamenti crypto e credito flessibile.",
+  keywords: [
+    "riparazioni Milano", 
+    "manutenzione casa Milano", 
+    "Bricollano Milano",
+    "elettricista Milano",
+    "idraulico Milano", 
+    "muratore Milano",
+    "servizi domestici Milano",
+    "pagamenti crypto",
+    "Navigli",
+    "Porta Romana", 
+    "Duomo Milano",
+    "professionisti casa"
+  ],
+  authors: [{ name: "Bricollano" }],
+  creator: "Bricollano",
+  publisher: "Bricollano",
   formatDetection: {
     email: false,
     telephone: false,
@@ -34,32 +50,50 @@ export const metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Cappomano | Servizi per la Casa con Pagamenti Crypto",
-    description: "La prima piattaforma italiana che unisce servizi domestici professionali con pagamenti in criptovalute e sistema di credito integrato.",
+    title: "Bricollano Milano | Riparazioni e Manutenzione Casa Milano",
+    description: "Servizi professionali di riparazioni e manutenzione casa a Milano. Elettricista, idraulico, muratore qualificati. Pagamenti crypto e credito flessibile.",
     url: "https://cappomano.it",
-    siteName: "Cappomano",
+    siteName: "Bricollano",
     locale: "it_IT",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Bricollano Milano - Servizi di riparazione e manutenzione casa",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cappomano | Servizi per la Casa con Pagamenti Crypto",
-    description: "Servizi domestici professionali con pagamenti crypto e sistema di credito integrato.",
+    title: "Bricollano Milano | Riparazioni e Manutenzione Casa Milano",
+    description: "Servizi professionali di riparazioni e manutenzione casa a Milano. Elettricista, idraulico, muratore qualificati.",
+    images: ["/og-image.jpg"],
   },
-  viewport: "width=device-width, initial-scale=1.0",
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="it">
+    <html lang="it" suppressHydrationWarning>
       <head>
         <link rel="canonical" href="https://cappomano.it" />
         <meta name="geo.region" content="IT-25" />
         <meta name="geo.placename" content="Milano" />
+        <meta name="geo.position" content="45.4642;9.1900" />
+        <meta name="ICBM" content="45.4642, 9.1900" />
+        <meta name="google-site-verification" content="your-verification-code" />
       </head>
       <body
         className={`${playfairDisplay.variable} ${outfit.variable} antialiased font-outfit`}
       >
+        <HydrationHandler />
+        <RefreshLoading />
         {children}
       </body>
     </html>

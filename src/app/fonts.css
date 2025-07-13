@@ -33,3 +33,9 @@ body, p, a, button, input, textarea, select, div {
   font-weight: 700;
   letter-spacing: -0.03em;
 }
+
+/* Fix for hydration issue - ensure this is applied consistently */
+html.hydrated {
+  visibility: visible;
+}
+

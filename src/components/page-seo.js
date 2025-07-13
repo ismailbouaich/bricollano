@@ -27,15 +27,19 @@ export default function PageSEO() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Cappomano",
-    "description": "Servizi per la casa con pagamenti in criptovalute e sistema di credito integrato.",
+    "name": "Bricollano",
+    "alternateName": "Bricollano Milano",
+    "description": "Servizi professionali di riparazioni e manutenzione casa a Milano. Elettricista, idraulico, muratore qualificati con pagamenti innovativi.",
     "image": "https://cappomano.it/logo.png",
     "url": "https://cappomano.it",
     "telephone": "+393123456789",
+    "email": "info@cappomano.it",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Via Milano, 1",
       "addressLocality": "Milano",
-      "addressRegion": "MI",
+      "addressRegion": "Lombardia",
+      "postalCode": "20121",
       "addressCountry": "IT"
     },
     "geo": {
@@ -43,50 +47,75 @@ export default function PageSEO() {
       "latitude": 45.4642,
       "longitude": 9.1900
     },
-    "priceRange": "€€",
-    "openingHours": "Mo-Fr 09:00-18:00",
-    "sameAs": [
-      "https://www.facebook.com/cappomano",
-      "https://www.instagram.com/cappomano"
-    ],
-    "makesOffer": [
+    "areaServed": [
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Servizi Idraulici",
-          "description": "Riparazione e installazione di sistemi idraulici domestici"
-        }
+        "@type": "City",
+        "name": "Milano"
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Servizi Elettrici",
-          "description": "Installazione e riparazione di impianti elettrici"
-        }
+        "@type": "AdministrativeArea",
+        "name": "Provincia di Milano"
       }
+    ],
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.4642,
+        "longitude": 9.1900
+      },
+      "geoRadius": "25000"
+    },
+    "priceRange": "€€",
+    "openingHours": ["Mo-Fr 08:00-18:00", "Sa 09:00-17:00"],
+    "paymentAccepted": ["Bitcoin", "Ethereum", "Cash", "Credit Card"],
+    "sameAs": [
+      "https://www.facebook.com/bricollano",
+      "https://www.instagram.com/bricollano"
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Servizi Domestici",
+      "name": "Servizi di Riparazione e Manutenzione Casa Milano",
       "itemListElement": [
         {
-          "@type": "OfferCatalog",
-          "name": "Servizi Idraulici",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Riparazione Idraulica"
-              }
-            }
-          ]
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Servizi Elettrici Milano",
+            "description": "Elettricista qualificato per impianti elettrici, riparazioni e installazioni a Milano",
+            "areaServed": "Milano",
+            "serviceType": "Elettricista"
+          }
         },
         {
-          "@type": "OfferCatalog",
-          "name": "Servizi Elettrici"
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Servizi Idraulici Milano",
+            "description": "Idraulico professionale per riparazioni, installazioni e manutenzione impianti idraulici a Milano",
+            "areaServed": "Milano",
+            "serviceType": "Idraulico"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Servizi Muratura Milano",
+            "description": "Muratore esperto per ristrutturazioni, riparazioni e lavori di muratura a Milano",
+            "areaServed": "Milano",
+            "serviceType": "Muratore"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Manutenzione Casa Milano",
+            "description": "Servizi completi di manutenzione casa per privati e aziende a Milano",
+            "areaServed": "Milano",
+            "serviceType": "Manutenzione"
+          }
         }
       ]
     }
