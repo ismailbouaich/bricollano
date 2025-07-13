@@ -122,7 +122,7 @@ export default function ContactForm({ initialService = "" }) {
         }
       } else if (formData.customerType === "individual") {
         // For individual customers, redirect to WhatsApp
-        const phoneNumber = "212631192323" // Replace with your actual WhatsApp number
+        const phoneNumber = "393312904233" // Replace with your actual WhatsApp number
         
         // Format the WhatsApp message
         const serviceText = formData.service ? 
