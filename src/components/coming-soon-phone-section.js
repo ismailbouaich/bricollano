@@ -58,7 +58,7 @@ const ComingSoonPhoneSection = () => (
                 <div className="w-14 md:w-16 h-14 md:h-16 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-2xl mx-auto mb-4 flex items-center justify-center">
                   <span className="text-2xl font-bold text-white">₿</span>
                 </div>
-                <h3 className="font-bold text-gray-800">CryptoMano</h3>
+                <h3 className="font-bold text-gray-800">Bricollano</h3>
                 <p className="text-sm text-gray-600">Version 2.1.0</p>
               </div>
               <div className="space-y-3 md:space-y-4">

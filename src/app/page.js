@@ -131,7 +131,6 @@ export default function LandingPage() {
               <Link href="#contact-form" className="text-[#292927]/70 hover:text-[#292927] transition-colors">
                 Contatti
               </Link>
-              <Button className="bg-[#e0710d] text-white hover:bg-[#bb6a48] hover:scale-105 transition-transform" onClick={handleIniziaOraClick}>Inizia Ora</Button>
             </MotionDiv>
 
             {/* Mobile Menu Button */}
@@ -182,13 +181,6 @@ export default function LandingPage() {
                       Contatti
                     </Link>
                   </SheetClose>
-                  <div className="pt-6 border-t border-[#e2dacd]/30">
-                    <SheetClose asChild>
-                      <Button className="w-full bg-[#e0710d] text-white hover:bg-[#bb6a48] hover:scale-105 transition-transform py-6 text-lg font-semibold rounded-2xl" onClick={handleIniziaOraClick}>
-                        Inizia Ora
-                      </Button>
-                    </SheetClose>
-                  </div>
                   <div className="pt-6">
                     <p className="text-center text-sm text-gray-500 mb-4">Contattaci direttamente:</p>
                     <SheetClose asChild>

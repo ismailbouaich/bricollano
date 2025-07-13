@@ -1,5 +1,7 @@
 import { Playfair_Display, Outfit } from "next/font/google";
 import "./globals.css";
+import HydrationHandler from "@/components/hydration-handler";
+import RefreshLoading from "@/components/refresh-loading";
 
 // Primary heading font - elegant, luxury feel
 const playfairDisplay = Playfair_Display({
@@ -78,7 +80,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="it">
+    <html lang="it" suppressHydrationWarning>
       <head>
         <link rel="canonical" href="https://cappomano.it" />
         <meta name="geo.region" content="IT-25" />
@@ -90,6 +92,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${playfairDisplay.variable} ${outfit.variable} antialiased font-outfit`}
       >
+        <HydrationHandler />
+        <RefreshLoading />
         {children}
       </body>
     </html>
