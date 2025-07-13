@@ -8,7 +8,7 @@
 - **Keywords**: Added comprehensive local SEO terms (riparazioni Milano, elettricista Milano, etc.)
 - **Open Graph**: Complete OG tags with proper image references
 - **Twitter Cards**: Summary large image with Milano-focused content
-- **Canonical URL**: Set to https://cappomano.it
+- **Canonical URL**: Set to https://bricollano.it
 - **Geo Tags**: Added precise Milano coordinates (45.4642, 9.1900)
 
 ### 2. **Structured Data (JSON-LD)**
@@ -41,7 +41,7 @@
 - **Sitemap.xml**: Updated with correct URLs and priorities
 - **Canonical Links**: Proper canonical URL structure
 - **Viewport**: Separated from metadata as per Next.js 15 requirements
-- **MetadataBase**: Set to https://cappomano.it
+- **MetadataBase**: Set to https://bricollano.it
 
 ### 6. **Performance & Image Optimization**
 - **Next.js Image Config**: AVIF/WebP formats enabled
@@ -57,7 +57,7 @@
 - **Domain Configuration**: Prepared for international domains
 
 ### 8. **Brand & Content Updates**
-- **Brand Name**: Updated from "Cappomano" to "Bricollano"
+- **Brand Name**: Updated from "bricollano" to "Bricollano"
 - **Service Focus**: Emphasized Milano-specific services
 - **Call-to-Actions**: Updated to "Richiedi Preventivo" and "Chiamaci Ora"
 - **Footer**: Updated contact information and service listings

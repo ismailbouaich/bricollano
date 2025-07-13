@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://cappomano.it";
+  const baseUrl = "https://bricollano.it";
   
   return [
     {

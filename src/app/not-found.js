@@ -15,7 +15,7 @@ export default function NotFound() {
         className="flex items-center mb-8"
       >
         <Hand className="w-12 h-12 text-[#e0710d] mr-3" />
-        <span className="text-4xl font-bold text-[#292927]">Cappomano</span>
+        <span className="text-4xl font-bold text-[#292927]">bricollano</span>
       </motion.div>
       
       <motion.h1 
@@ -62,7 +62,7 @@ export default function NotFound() {
         transition={{ duration: 0.5, delay: 0.6 }}
         className="mt-16 text-sm text-[#292927]/50"
       >
-        &copy; {new Date().getFullYear()} Cappomano. Tutti i diritti riservati.
+        &copy; {new Date().getFullYear()} bricollano. Tutti i diritti riservati.
       </motion.div>
     </div>
   );

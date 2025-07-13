@@ -111,7 +111,7 @@ export default function Footer() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3 p-3 bg-[#e2dacd]/10 rounded-2xl hover:bg-[#e2dacd]/20 transition-colors cursor-pointer">
                   <Mail className="w-5 h-5 text-[#e0710d]" />
-                  <span className="text-[#e2dacd]/90">info@cappomano.it</span>
+                  <span className="text-[#e2dacd]/90">info@bricollano.it</span>
                 </div>
                 <div className="flex items-center space-x-3 p-3 bg-[#e2dacd]/10 rounded-2xl hover:bg-[#e2dacd]/20 transition-colors cursor-pointer">
                   <Phone className="w-5 h-5 text-[#e0710d]" />
