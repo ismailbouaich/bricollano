@@ -19,7 +19,7 @@ export default function Loading() {
             alt="Bricollano Logo" 
             width={64} 
             height={64} 
-            className="w-16 h-16 object-contain"
+            className="w-50 h-16 object-contain"
           />
         </div>
       </div>
