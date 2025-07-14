@@ -240,17 +240,17 @@ ${formData.message || "Nessun messaggio aggiuntivo"}
               
               <div className="relative z-10 p-6">
                 <div className="inline-block p-3 bg-[#2563eb]/10 rounded-full mb-4">
-                  <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center">
                     <Image 
                       src="/BRICOLLANO-plain-blue.png" 
                       alt="Bricollano Logo" 
-                      width={20} 
-                      height={20} 
-                      className="w-5 h-5 object-contain"
+                      width={90} 
+                      height={90} 
+                      className="w-30 h-8 object-contain"
                     />
                   </div>
                 </div>
-                <CardTitle className="text-4xl font-bold text-[#292927] mb-3 bg-gradient-to-r from-[#292927] to-[#2563eb] bg-clip-text text-transparent">
+                <CardTitle className="text-4xl font-bold mb-3 bg-gradient-to-r from-[#292927] to-[#2563eb] bg-clip-text text-transparent">
                   Contatta Bricollano
                 </CardTitle>
                 <CardDescription className="text-lg text-[#292927]/70 max-w-md mx-auto leading-relaxed">

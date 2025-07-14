@@ -51,13 +51,13 @@ export default function RefreshLoading() {
       
       {/* Logo */}
       <div className="relative z-10 mb-10">
-        <div className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg animate-bounce p-2">
+        <div className="w-28 h-28 bg-white rounded-2xl flex items-center justify-center shadow-lg animate-bounce p-3">
           <Image 
             src="/BRICOLLANO-plain-blue.png" 
             alt="Bricollano Logo" 
-            width={56} 
-            height={56} 
-            className="w-14 h-14 object-contain"
+            width={80} 
+            height={80} 
+            className="w-20 h-20 object-contain"
           />
         </div>
       </div>
