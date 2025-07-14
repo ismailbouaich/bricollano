@@ -1,5 +1,4 @@
 import { ImageResponse } from 'next/og';
- 
 export const alt = 'Bricollano - Servizi per la Casa con Pagamenti Crypto';
 export const size = {
   width: 1200,

@@ -20,7 +20,7 @@ const outfit = Outfit({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://cappomano.it'),
+  metadataBase: new URL('https://bricollano.it'),
   title: "Bricollano Milano | Riparazioni e Manutenzione Casa Milano",
   description: "Servizi professionali di riparazioni e manutenzione casa a Milano. Elettricista, idraulico, muratore qualificati. Pagamenti crypto e credito flessibile.",
   keywords: [
@@ -52,7 +52,7 @@ export const metadata = {
   openGraph: {
     title: "Bricollano Milano | Riparazioni e Manutenzione Casa Milano",
     description: "Servizi professionali di riparazioni e manutenzione casa a Milano. Elettricista, idraulico, muratore qualificati. Pagamenti crypto e credito flessibile.",
-    url: "https://cappomano.it",
+    url: "https://bricollano.it",
     siteName: "Bricollano",
     locale: "it_IT",
     type: "website",
@@ -82,7 +82,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="it" suppressHydrationWarning>
       <head>
-        <link rel="canonical" href="https://cappomano.it" />
+        <link rel="canonical" href="https://bricollano.it" />
         <meta name="geo.region" content="IT-25" />
         <meta name="geo.placename" content="Milano" />
         <meta name="geo.position" content="45.4642;9.1900" />

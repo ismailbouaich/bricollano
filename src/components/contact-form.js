@@ -95,7 +95,8 @@ export default function ContactForm({ initialService = "" }) {
           services.find(s => s.toLowerCase().replace(/\s+/g, "-") === formData.service) || formData.service : 
           "Nessun servizio selezionato";
         
-        // Prepare template parameters
+        // Prepare template 
+        
         const templateParams = {
           from_name: `${formData.firstName} ${formData.lastName}`,
           from_email: formData.email,
@@ -121,7 +122,7 @@ export default function ContactForm({ initialService = "" }) {
         }
       } else if (formData.customerType === "individual") {
         // For individual customers, redirect to WhatsApp
-        const phoneNumber = "393123456789" // Replace with your actual WhatsApp number
+        const phoneNumber = "393312904233" // Replace with your actual WhatsApp number
         
         // Format the WhatsApp message
         const serviceText = formData.service ? 
@@ -131,16 +132,16 @@ export default function ContactForm({ initialService = "" }) {
         const message = `
 *Nuova Richiesta da Bricollano*
 
-👤 *Informazioni Cliente:*
+ *Informazioni Cliente:*
 • Nome: ${formData.firstName} ${formData.lastName}
 • Email: ${formData.email}
 • Telefono: ${formData.phone || "Non fornito"}
 
-🔧 *Dettagli Servizio:*
+ *Dettagli Servizio:*
 • Tipo Cliente: Privato/Individuale
 • Servizio Richiesto: ${serviceText}
 
-💬 *Messaggio:*
+ *Messaggio:*
 ${formData.message || "Nessun messaggio aggiuntivo"}
 
 ---

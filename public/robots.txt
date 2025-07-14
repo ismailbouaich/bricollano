@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://cappomano.it/sitemap.xml
+Sitemap: https://bricollano.it/sitemap.xml
 
 # Disallow admin or private pages (add as needed)
 # Disallow: /admin/
