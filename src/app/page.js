@@ -112,9 +112,9 @@ export default function LandingPage() {
               <Image 
                 src="/BRICOLLANO-plain-blue.png" 
                 alt="Bricollano Logo" 
-                width={56} 
-                height={56} 
-                className="w-14 h-14 object-contain"
+                width={80} 
+                height={80} 
+                className="w-50 h-14 object-contain"
               />
             </MotionDiv>
 
@@ -153,9 +153,9 @@ export default function LandingPage() {
                     <Image 
                       src="/BRICOLLANO-plain-blue.png" 
                       alt="Bricollano Logo" 
-                      width={32} 
-                      height={32} 
-                      className="w-8 h-8 object-contain"
+                      width={70} 
+                      height={70} 
+                      className="w-50 h-12 object-contain"
                     />
                   </SheetTitle>
                 </SheetHeader>
@@ -487,9 +487,9 @@ export default function LandingPage() {
                   <Image 
                     src="/BRICOLLANO-logo-blue.png" 
                     alt="Bricollano Logo" 
-                    width={96} 
-                    height={96} 
-                    className="w-24 h-24 mx-auto mb-8 object-contain"
+                    width={128} 
+                    height={128} 
+                    className="w-32 h-32 mx-auto mb-8 object-contain"
                   />
                   <h3 className="text-2xl lg:text-3xl font-bold text-[#292927] mb-4">Bricollano Milano</h3>
                   <p className="text-[#292927]/70 text-lg font-medium">Servizi professionali di riparazione e manutenzione casa</p>

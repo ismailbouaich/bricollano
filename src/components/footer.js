@@ -70,11 +70,11 @@ export default function Footer() {
                   <Image 
                     src="/BRICOLLANO-plain-blue.png" 
                     alt="Bricollano Logo" 
-                    width={40} 
-                    height={40} 
-                    className="w-10 h-10 object-contain"
+                    width={90} 
+                    height={90} 
+                    className="w-50 h-14 object-contain"
                   />
-                  <span className="text-3xl font-bold">Bricollano</span>
+                 
                 </div>
                 <p className="text-[#e2e8f0]/80 text-lg leading-relaxed">
                   La piattaforma leader per servizi di riparazione e manutenzione casa a Milano. Professionisti qualificati a portata di mano.

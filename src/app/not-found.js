@@ -17,9 +17,9 @@ export default function NotFound() {
         <Image 
           src="/BRICOLLANO-plain-blue.png" 
           alt="Bricollano Logo" 
-          width={48} 
-          height={48} 
-          className="w-12 h-12 mr-3 object-contain"
+          width={64} 
+          height={64} 
+          className="w-16 h-16 mr-3 object-contain"
         />
         <span className="text-4xl font-bold text-[#292927]">Bricollano</span>
       </motion.div>

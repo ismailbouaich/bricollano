@@ -13,13 +13,13 @@ export default function Loading() {
       
       {/* Logo */}
       <div className="relative z-10 mb-8">
-        <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-lg animate-pulse p-2">
+        <div className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg animate-pulse p-3">
           <Image 
             src="/BRICOLLANO-plain-blue.png" 
             alt="Bricollano Logo" 
-            width={48} 
-            height={48} 
-            className="w-12 h-12 object-contain"
+            width={64} 
+            height={64} 
+            className="w-16 h-16 object-contain"
           />
         </div>
       </div>
