@@ -45,7 +45,7 @@ const services = [
     id: 'pulizie',
     title: 'Pulizie Casa',
     description: 'Pulizia completa di casa e ufficio a Milano',
-    price: '€28/ora',
+    price: '€15/ora',
     rating: 4.9,
     reviews: 342,
     icon: FaBroom,
