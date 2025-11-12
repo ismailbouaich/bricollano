@@ -7,7 +7,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import ContactForm from "@/components/contact-form"
-import { useRef, useState, useEffect } from "react"
+import { useRef, useState, useEffect,useCallback } from "react"
 import EmblaServicesSlider from "@/components/embla-services-slider"
 import ComingSoonPhoneSection from "@/components/coming-soon-phone-section"
 import Footer from "@/components/footer"
@@ -56,10 +56,31 @@ export default function LandingPage() {
   const [selectedService, setSelectedService] = useState("");
   const contactFormRef = useRef(null);
   const [isMounted, setIsMounted] = useState(false);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   // Hydration fix: Only enable client-side features after component is mounted
   useEffect(() => {
     setIsMounted(true);
+  }, []);
+
+  // Helper function to handle smooth scrolling to sections
+  const scrollToSection = useCallback((sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const headerHeight = 80;
+      const elementPosition = section.offsetTop - headerHeight;
+      
+      // Close the sheet first
+      setIsSheetOpen(false);
+      
+      // Wait for sheet animation to complete, then scroll
+      setTimeout(() => {
+        window.scrollTo({
+          top: elementPosition,
+          behavior: "smooth",
+        });
+      }, 350); // Increased delay to ensure sheet is fully closed
+    }
   }, []);
 
   const handleBookService = (service) => {
@@ -140,7 +161,7 @@ export default function LandingPage() {
             </MotionDiv>
 
             {/* Mobile Menu Button */}
-            <Sheet>
+            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden hover:scale-110 transition-transform">
                   <Menu className="h-6 w-6" />
@@ -160,38 +181,30 @@ export default function LandingPage() {
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col space-y-6 mt-12 px-4 overflow-y-auto max-h-[calc(100vh-120px)] pb-6">
-                  <SheetClose asChild>
-                    <Link
-                      href="#services"
-                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#2563eb] py-4 px-6 rounded-2xl hover:bg-[#e2e8f0]/20 transition-all duration-300 border border-transparent hover:border-[#2563eb]/20"
-                    >
-                      Servizi
-                    </Link>
-                  </SheetClose>
-                  <SheetClose asChild>
-                    <Link
-                      href="#features"
-                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#2563eb] py-4 px-6 rounded-2xl hover:bg-[#e2e8f0]/20 transition-all duration-300 border border-transparent hover:border-[#2563eb]/20"
-                    >
-                      Caratteristiche
-                    </Link>
-                  </SheetClose>
-                  <SheetClose asChild>
-                    <Link
-                      href="#about"
-                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#2563eb] py-4 px-6 rounded-2xl hover:bg-[#e2e8f0]/20 transition-all duration-300 border border-transparent hover:border-[#2563eb]/20"
-                    >
-                      Chi Siamo
-                    </Link>
-                  </SheetClose>
-                  <SheetClose asChild>
-                    <Link
-                      href="#contact-form"
-                      className="text-center text-xl font-semibold text-[#292927] hover:text-[#2563eb] py-4 px-6 rounded-2xl hover:bg-[#e2e8f0]/20 transition-all duration-300 border border-transparent hover:border-[#2563eb]/20"
-                    >
-                      Contatti
-                    </Link>
-                  </SheetClose>
+                  <button
+                    onClick={() => scrollToSection("services")}
+                    className="text-center text-xl font-semibold text-[#292927] hover:text-[#2563eb] py-4 px-6 rounded-2xl hover:bg-[#e2e8f0]/20 transition-all duration-300 border border-transparent hover:border-[#2563eb]/20"
+                  >
+                    Servizi
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("features")}
+                    className="text-center text-xl font-semibold text-[#292927] hover:text-[#2563eb] py-4 px-6 rounded-2xl hover:bg-[#e2e8f0]/20 transition-all duration-300 border border-transparent hover:border-[#2563eb]/20"
+                  >
+                    Caratteristiche
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("about")}
+                    className="text-center text-xl font-semibold text-[#292927] hover:text-[#2563eb] py-4 px-6 rounded-2xl hover:bg-[#e2e8f0]/20 transition-all duration-300 border border-transparent hover:border-[#2563eb]/20"
+                  >
+                    Chi Siamo
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("contact-form")}
+                    className="text-center text-xl font-semibold text-[#292927] hover:text-[#2563eb] py-4 px-6 rounded-2xl hover:bg-[#e2e8f0]/20 transition-all duration-300 border border-transparent hover:border-[#2563eb]/20"
+                  >
+                    Contatti
+                  </button>
                   <div className="pt-6">
                     <p className="text-center text-sm text-gray-500 mb-4">Contattaci direttamente:</p>
                     <SheetClose asChild>
@@ -201,7 +214,7 @@ export default function LandingPage() {
                         asChild
                       >
                         <a
-                          href="https://wa.me/393123456789"
+                          href="https://wa.me/393312904233"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center justify-center space-x-2"
