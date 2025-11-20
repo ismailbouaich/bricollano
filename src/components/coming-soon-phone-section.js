@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import {
   MotionDiv,
   MotionSection,
@@ -33,7 +34,7 @@ const ComingSoonPhoneSection = () => (
         variants={fadeInRight}
       >
         <motion.div
-          className="w-60 md:w-64 h-[420px] md:h-[500px] bg-gradient-to-br from-[#292927] to-[#1e40af] rounded-[2.5rem] md:rounded-[3rem] p-2 shadow-2xl relative"
+          className="w-[170px] md:w-[190px] h-[360px] md:h-[410px] bg-gradient-to-br from-[#292927] to-[#1e40af] rounded-[2rem] md:rounded-[2.5rem] p-1.5 shadow-2xl relative"
           variants={{
             animate: {
               y: [0, -20, 0],
@@ -51,31 +52,18 @@ const ComingSoonPhoneSection = () => (
           }}
           animate="animate"
         >
-          <div className="w-full h-full bg-white rounded-[2rem] md:rounded-[2.5rem] overflow-hidden relative">
-            <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-28 md:w-32 h-6 bg-[#292927] rounded-full"></div>
-            <div className="pt-12 md:pt-16 px-4 md:px-6">
-              <div className="text-center mb-6 md:mb-8">
-                <div className="w-14 md:w-16 h-14 md:h-16 bg-gradient-to-br from-[#2563eb] to-[#1d4ed8] rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-white">₿</span>
-                </div>
-                <h3 className="font-bold text-[#292927]">Bricollano</h3>
-                <p className="text-sm text-[#292927]/70">Version 2.1.0</p>
-              </div>
-              <div className="space-y-3 md:space-y-4">
-                <div className="flex items-center justify-between p-3 bg-[#e2e8f0]/30 rounded-lg">
-                  <span className="text-sm text-[#292927]/70">Hair Salon</span>
-                  <span className="text-sm font-bold text-[#2563eb]">0.002 BTC</span>
-                </div>
-                <div className="flex items-center justify-between p-3 bg-[#e2e8f0]/30 rounded-lg">
-                  <span className="text-sm text-[#292927]/70">Car Service</span>
-                  <span className="text-sm font-bold text-[#1d4ed8]">0.015 ETH</span>
-                </div>
-                <div className="flex items-center justify-between p-3 bg-[#e2e8f0]/30 rounded-lg">
-                  <span className="text-sm text-[#292927]/70">Home Cleaning</span>
-                  <span className="text-sm font-bold text-[#1e40af]">150 USDT</span>
-                </div>
-              </div>
-            </div>
+          <div className="w-full h-full bg-black rounded-[1.75rem] md:rounded-[2.25rem] overflow-hidden relative">
+            {/* Phone Notch */}
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 md:w-24 h-6 bg-black rounded-b-2xl z-10"></div>
+            
+            {/* App Screenshot */}
+            <Image 
+              src="/main-screen.jpeg" 
+              alt="Bricollano App" 
+              fill
+              className="object-cover object-top"
+              priority
+            />
           </div>
         </motion.div>
       </MotionDiv>
